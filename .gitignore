@@ -1,0 +1,27 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Raw data
+data/raw/
+data/processed/
+
+# DuckDB
+database/*.duckdb
+database/*.wal
+
+# Python cache
+.nflreadpy/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
