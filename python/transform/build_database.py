@@ -1,72 +1,41 @@
 from pathlib import Path
+
 import duckdb
 
 ROOT = Path(__file__).resolve().parents[2]
+
 DATABASE = ROOT / "database" / "fantasee_forge.duckdb"
+SQL_DIR = ROOT / "sql"
 
-def main():
-    DATABASE.parent.mkdir(parents=True, exist_ok=True)
-    con = duckdb.connect(str(DATABASE))
-    print("Creating schemas")
-    con.execute("""
-        CREATE SCHEMA IF NOT EXISTS raw;
-        CREATE SCHEMA IF NOT EXISTS staging;
-        CREATE SCHEMA IF NOT EXISTS features;
-        CREATE SCHEMA IF NOT EXISTS marts;
-    """)
+con = duckdb.connect(str(DATABASE))
 
-    print("Loading raw player stats")
-    con.execute("""
-        CREATE OR REPLACE TABLE raw.player_stats AS
-        SELECT * 
-        FROM read_parquet('data/raw/player_stats/*.parquet');
-    """)
+def run_sql_file(path):
+    """Read and execute a SQL file."""
     
-    print("Loading raw snap counts")
-    con.execute("""
-        CREATE OR REPLACE TABLE raw.snap_counts AS
-        SELECT *
-        FROM read_parquet('data/raw/snap_counts/*.parquet');
-    """)
+    print(f"Running SQL: {path}")
     
-    print("Loading raw rosters")
-    con.execute("""
-        CREATE OR REPLACE TABLE raw.rosters AS
-        SELECT *
-        FROM read_parquet('data/raw/rosters/*.parquet');
-    """)
+    sql = path.read_text(encoding="utf-8")
+    
+    con.execute(sql)
 
-    print("Loading raw injuries")
-    con.execute("""
-        CREATE OR REPLACE TABLE raw.injuries AS
-        SELECT *
-        FROM read_parquet('data/raw/injuries/*.parquet',
-                          union_by_name=True);
-    """)
-    
-    print("Loading raw players")
-    con.execute("""
-        CREATE OR REPLACE TABLE raw.players AS
-        SELECT *
-        FROM read_parquet('data/raw/players/players.parquet');
-    """)
-    
-    print("Loading raw schedules")
-    con.execute("""
-        CREATE OR REPLACE TABLE raw.schedules AS
-        SELECT *
-        FROM read_parquet('data/raw/schedules/schedules.parquet');
-    """)
-    
-    print("Database built")
-    print(
-        con.execute("""
-            SELECT
-                COUNT(*) AS rows
-            FROM raw.player_stats
-        """).fetchdf()
-    )
-    con.close()
+print("Creating schemas...")
 
-if __name__ == "__main__":
-    main()
+con.execute("""
+    CREATE SCHEMA IF NOT EXISTS raw;
+    CREATE SCHEMA IF NOT EXISTS staging;
+    CREATE SCHEMA IF NOT EXISTS features;
+    CREATE SCHEMA IF NOT EXISTS marts;
+""")
+
+for sql_file in sorted((SQL_DIR / "staging").glob("*.sql")):
+    run_sql_file(sql_file)
+
+for sql_file in sorted((SQL_DIR / "features").glob("*.sql")):
+    run_sql_file(sql_file)
+
+for sql_file in sorted((SQL_DIR / "marts").glob("*.sql")):
+    run_sql_file(sql_file)
+
+con.close()
+
+print("Database build complete.")

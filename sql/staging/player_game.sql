@@ -265,3 +265,26 @@ SELECT
     2019 AS training_start,
     2025 AS training_end,
     CURRENT_TIMESTAMP AS created_at;
+
+CREATE TABLE IF NOT EXISTS marts.prediction_history (
+    prediction_date TIMESTAMP,
+    season INTEGER,
+    week INTEGER,
+    player_id VARCHAR,
+    player_name VARCHAR,
+    position VARCHAR,
+    team VARCHAR,
+    opponent VARCHAR,
+    projection DOUBLE,
+    floor DOUBLE,
+    ceiling DOUBLE,
+    model_version VARCHAR
+    );
+
+CREATE TABLE IF NOT EXISTS marts.model_performance (
+    model_version VARCHAR,
+    test_season INTEGER,
+    mae DOUBLE,
+    rmse DOUBLE,
+    created_at TIMESTAMP
+    );

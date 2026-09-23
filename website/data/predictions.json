@@ -1,0 +1,3452 @@
+[
+  {
+    "rank": 1.0,
+    "player_display_name": "Kenneth Walker III",
+    "position": "RB",
+    "team": "KC",
+    "opponent_team": "IND",
+    "projection": 28.320154190063477,
+    "floor": 24.151159286499023,
+    "ceiling": 32.4891471862793
+  },
+  {
+    "rank": 2.0,
+    "player_display_name": "Josh Allen",
+    "position": "QB",
+    "team": "BUF",
+    "opponent_team": "DET",
+    "projection": 26.873838424682617,
+    "floor": 22.704843521118164,
+    "ceiling": 31.04283332824707
+  },
+  {
+    "rank": 3.0,
+    "player_display_name": "Dalton Schultz",
+    "position": "TE",
+    "team": "HOU",
+    "opponent_team": "CIN",
+    "projection": 26.460752487182617,
+    "floor": 22.291757583618164,
+    "ceiling": 30.62974739074707
+  },
+  {
+    "rank": 4.0,
+    "player_display_name": "Jaxon Smith-Njigba",
+    "position": "WR",
+    "team": "SEA",
+    "opponent_team": "ARI",
+    "projection": 26.424535751342773,
+    "floor": 22.25554084777832,
+    "ceiling": 30.593530654907227
+  },
+  {
+    "rank": 5.0,
+    "player_display_name": "DeVonta Smith",
+    "position": "WR",
+    "team": "PHI",
+    "opponent_team": "TEN",
+    "projection": 25.93589973449707,
+    "floor": 21.766904830932617,
+    "ceiling": 30.104894638061523
+  },
+  {
+    "rank": 6.0,
+    "player_display_name": "Amon-Ra St. Brown",
+    "position": "WR",
+    "team": "DET",
+    "opponent_team": "BUF",
+    "projection": 24.552520751953125,
+    "floor": 20.383525848388672,
+    "ceiling": 28.721515655517578
+  },
+  {
+    "rank": 7.0,
+    "player_display_name": "Trey McBride",
+    "position": "TE",
+    "team": "ARI",
+    "opponent_team": "SEA",
+    "projection": 22.983388900756836,
+    "floor": 18.814393997192383,
+    "ceiling": 27.15238380432129
+  },
+  {
+    "rank": 8.0,
+    "player_display_name": "Jahmyr Gibbs",
+    "position": "RB",
+    "team": "DET",
+    "opponent_team": "BUF",
+    "projection": 22.863710403442383,
+    "floor": 18.69471549987793,
+    "ceiling": 27.032705307006836
+  },
+  {
+    "rank": 9.0,
+    "player_display_name": "Jonathan Taylor",
+    "position": "RB",
+    "team": "IND",
+    "opponent_team": "KC",
+    "projection": 22.586219787597656,
+    "floor": 18.417224884033203,
+    "ceiling": 26.75521469116211
+  },
+  {
+    "rank": 10.0,
+    "player_display_name": "Tyler Shough",
+    "position": "QB",
+    "team": "NO",
+    "opponent_team": "BAL",
+    "projection": 22.304773330688477,
+    "floor": 18.135778427124023,
+    "ceiling": 26.47376823425293
+  },
+  {
+    "rank": 11.0,
+    "player_display_name": "Chris Olave",
+    "position": "WR",
+    "team": "NO",
+    "opponent_team": "BAL",
+    "projection": 22.072635650634766,
+    "floor": 17.903640747070312,
+    "ceiling": 26.24163055419922
+  },
+  {
+    "rank": 12.0,
+    "player_display_name": "CeeDee Lamb",
+    "position": "WR",
+    "team": "DAL",
+    "opponent_team": "WAS",
+    "projection": 21.865182876586914,
+    "floor": 17.69618797302246,
+    "ceiling": 26.034177780151367
+  },
+  {
+    "rank": 13.0,
+    "player_display_name": "Jalen Coker",
+    "position": "WR",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 21.744871139526367,
+    "floor": 17.575876235961914,
+    "ceiling": 25.91386604309082
+  },
+  {
+    "rank": 14.0,
+    "player_display_name": "Ashton Jeanty",
+    "position": "RB",
+    "team": "LV",
+    "opponent_team": "LAC",
+    "projection": 21.737367630004883,
+    "floor": 17.56837272644043,
+    "ceiling": 25.906362533569336
+  },
+  {
+    "rank": 15.0,
+    "player_display_name": "Davante Adams",
+    "position": "WR",
+    "team": "LA",
+    "opponent_team": "NYG",
+    "projection": 21.66623878479004,
+    "floor": 17.497243881225586,
+    "ceiling": 25.835233688354492
+  },
+  {
+    "rank": 16.0,
+    "player_display_name": "Travis Kelce",
+    "position": "TE",
+    "team": "KC",
+    "opponent_team": "IND",
+    "projection": 21.324148178100586,
+    "floor": 17.155153274536133,
+    "ceiling": 25.49314308166504
+  },
+  {
+    "rank": 17.0,
+    "player_display_name": "Parker Washington",
+    "position": "WR",
+    "team": "JAX",
+    "opponent_team": "DEN",
+    "projection": 20.84684181213379,
+    "floor": 16.677846908569336,
+    "ceiling": 25.015836715698242
+  },
+  {
+    "rank": 18.0,
+    "player_display_name": "Jaylen Waddle",
+    "position": "WR",
+    "team": "DEN",
+    "opponent_team": "JAX",
+    "projection": 20.661270141601562,
+    "floor": 16.49227523803711,
+    "ceiling": 24.830265045166016
+  },
+  {
+    "rank": 19.0,
+    "player_display_name": "Chase Brown",
+    "position": "RB",
+    "team": "CIN",
+    "opponent_team": "HOU",
+    "projection": 20.24291229248047,
+    "floor": 16.073917388916016,
+    "ceiling": 24.411907196044922
+  },
+  {
+    "rank": 20.0,
+    "player_display_name": "Trevor Lawrence",
+    "position": "QB",
+    "team": "JAX",
+    "opponent_team": "DEN",
+    "projection": 20.135177612304688,
+    "floor": 15.966182708740234,
+    "ceiling": 24.30417251586914
+  },
+  {
+    "rank": 21.0,
+    "player_display_name": "Breece Hall",
+    "position": "RB",
+    "team": "NYJ",
+    "opponent_team": "GB",
+    "projection": 19.86849594116211,
+    "floor": 15.699501037597656,
+    "ceiling": 24.037490844726562
+  },
+  {
+    "rank": 22.0,
+    "player_display_name": "De'Von Achane",
+    "position": "RB",
+    "team": "MIA",
+    "opponent_team": "SF",
+    "projection": 19.855161666870117,
+    "floor": 15.686166763305664,
+    "ceiling": 24.02415657043457
+  },
+  {
+    "rank": 23.0,
+    "player_display_name": "Bijan Robinson",
+    "position": "RB",
+    "team": "ATL",
+    "opponent_team": "CAR",
+    "projection": 19.65455436706543,
+    "floor": 15.485559463500977,
+    "ceiling": 23.823549270629883
+  },
+  {
+    "rank": 24.0,
+    "player_display_name": "Ja'Marr Chase",
+    "position": "WR",
+    "team": "CIN",
+    "opponent_team": "HOU",
+    "projection": 19.496450424194336,
+    "floor": 15.327455520629883,
+    "ceiling": 23.66544532775879
+  },
+  {
+    "rank": 25.0,
+    "player_display_name": "Omarion Hampton",
+    "position": "RB",
+    "team": "LAC",
+    "opponent_team": "LV",
+    "projection": 19.37285804748535,
+    "floor": 15.203863143920898,
+    "ceiling": 23.541852951049805
+  },
+  {
+    "rank": 26.0,
+    "player_display_name": "D'Andre Swift",
+    "position": "RB",
+    "team": "CHI",
+    "opponent_team": "MIN",
+    "projection": 19.35200309753418,
+    "floor": 15.183008193969727,
+    "ceiling": 23.520998001098633
+  },
+  {
+    "rank": 27.0,
+    "player_display_name": "Patrick Mahomes",
+    "position": "QB",
+    "team": "KC",
+    "opponent_team": "IND",
+    "projection": 19.02309799194336,
+    "floor": 14.854103088378906,
+    "ceiling": 23.192092895507812
+  },
+  {
+    "rank": 28.0,
+    "player_display_name": "Derrick Henry",
+    "position": "RB",
+    "team": "BAL",
+    "opponent_team": "NO",
+    "projection": 18.878862380981445,
+    "floor": 14.709867477416992,
+    "ceiling": 23.0478572845459
+  },
+  {
+    "rank": 29.0,
+    "player_display_name": "Bucky Irving",
+    "position": "RB",
+    "team": "TB",
+    "opponent_team": "CLE",
+    "projection": 18.804502487182617,
+    "floor": 14.635507583618164,
+    "ceiling": 22.97349739074707
+  },
+  {
+    "rank": 30.0,
+    "player_display_name": "Caleb Williams",
+    "position": "QB",
+    "team": "CHI",
+    "opponent_team": "MIN",
+    "projection": 18.480588912963867,
+    "floor": 14.311594009399414,
+    "ceiling": 22.64958381652832
+  },
+  {
+    "rank": 31.0,
+    "player_display_name": "Josh Downs",
+    "position": "WR",
+    "team": "IND",
+    "opponent_team": "KC",
+    "projection": 18.2442569732666,
+    "floor": 14.075262069702148,
+    "ceiling": 22.413251876831055
+  },
+  {
+    "rank": 32.0,
+    "player_display_name": "Brock Purdy",
+    "position": "QB",
+    "team": "SF",
+    "opponent_team": "MIA",
+    "projection": 18.243484497070312,
+    "floor": 14.07448959350586,
+    "ceiling": 22.412479400634766
+  },
+  {
+    "rank": 33.0,
+    "player_display_name": "Rashod Bateman",
+    "position": "WR",
+    "team": "BAL",
+    "opponent_team": "NO",
+    "projection": 18.16680145263672,
+    "floor": 13.997806549072266,
+    "ceiling": 22.335796356201172
+  },
+  {
+    "rank": 34.0,
+    "player_display_name": "Dak Prescott",
+    "position": "QB",
+    "team": "DAL",
+    "opponent_team": "WAS",
+    "projection": 17.875865936279297,
+    "floor": 13.706871032714844,
+    "ceiling": 22.04486083984375
+  },
+  {
+    "rank": 35.0,
+    "player_display_name": "George Pickens",
+    "position": "WR",
+    "team": "DAL",
+    "opponent_team": "WAS",
+    "projection": 17.626737594604492,
+    "floor": 13.457742691040039,
+    "ceiling": 21.795732498168945
+  },
+  {
+    "rank": 36.0,
+    "player_display_name": "Dalton Kincaid",
+    "position": "TE",
+    "team": "BUF",
+    "opponent_team": "DET",
+    "projection": 17.62294578552246,
+    "floor": 13.453950881958008,
+    "ceiling": 21.791940689086914
+  },
+  {
+    "rank": 37.0,
+    "player_display_name": "Jalen Hurts",
+    "position": "QB",
+    "team": "PHI",
+    "opponent_team": "TEN",
+    "projection": 17.350845336914062,
+    "floor": 13.18185043334961,
+    "ceiling": 21.519840240478516
+  },
+  {
+    "rank": 38.0,
+    "player_display_name": "Matthew Stafford",
+    "position": "QB",
+    "team": "LA",
+    "opponent_team": "NYG",
+    "projection": 17.245380401611328,
+    "floor": 13.076385498046875,
+    "ceiling": 21.41437530517578
+  },
+  {
+    "rank": 39.0,
+    "player_display_name": "Drake Maye",
+    "position": "QB",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 17.125732421875,
+    "floor": 12.956737518310547,
+    "ceiling": 21.294727325439453
+  },
+  {
+    "rank": 40.0,
+    "player_display_name": "Kirk Cousins",
+    "position": "QB",
+    "team": "LV",
+    "opponent_team": "LAC",
+    "projection": 16.863628387451172,
+    "floor": 12.694633483886719,
+    "ceiling": 21.032623291015625
+  },
+  {
+    "rank": 41.0,
+    "player_display_name": "Adonai Mitchell",
+    "position": "WR",
+    "team": "NYJ",
+    "opponent_team": "GB",
+    "projection": 16.751502990722656,
+    "floor": 12.582508087158203,
+    "ceiling": 20.92049789428711
+  },
+  {
+    "rank": 42.0,
+    "player_display_name": "Cam Skattebo",
+    "position": "RB",
+    "team": "NYG",
+    "opponent_team": "LA",
+    "projection": 16.654390335083008,
+    "floor": 12.485395431518555,
+    "ceiling": 20.82338523864746
+  },
+  {
+    "rank": 43.0,
+    "player_display_name": "Deshaun Watson",
+    "position": "QB",
+    "team": "CLE",
+    "opponent_team": "TB",
+    "projection": 16.55253028869629,
+    "floor": 12.383535385131836,
+    "ceiling": 20.721525192260742
+  },
+  {
+    "rank": 44.0,
+    "player_display_name": "Bo Nix",
+    "position": "QB",
+    "team": "DEN",
+    "opponent_team": "JAX",
+    "projection": 16.484596252441406,
+    "floor": 12.315601348876953,
+    "ceiling": 20.65359115600586
+  },
+  {
+    "rank": 45.0,
+    "player_display_name": "Jameis Winston",
+    "position": "QB",
+    "team": "NYG",
+    "opponent_team": "LA",
+    "projection": 16.412315368652344,
+    "floor": 12.24332046508789,
+    "ceiling": 20.581310272216797
+  },
+  {
+    "rank": 46.0,
+    "player_display_name": "Lamar Jackson",
+    "position": "QB",
+    "team": "BAL",
+    "opponent_team": "NO",
+    "projection": 16.34323501586914,
+    "floor": 12.174240112304688,
+    "ceiling": 20.512229919433594
+  },
+  {
+    "rank": 47.0,
+    "player_display_name": "C.J. Stroud",
+    "position": "QB",
+    "team": "HOU",
+    "opponent_team": "CIN",
+    "projection": 16.313642501831055,
+    "floor": 12.144647598266602,
+    "ceiling": 20.482637405395508
+  },
+  {
+    "rank": 48.0,
+    "player_display_name": "James Cook",
+    "position": "RB",
+    "team": "BUF",
+    "opponent_team": "DET",
+    "projection": 16.10788345336914,
+    "floor": 11.938888549804688,
+    "ceiling": 20.276878356933594
+  },
+  {
+    "rank": 49.0,
+    "player_display_name": "Jared Goff",
+    "position": "QB",
+    "team": "DET",
+    "opponent_team": "BUF",
+    "projection": 16.104028701782227,
+    "floor": 11.935033798217773,
+    "ceiling": 20.27302360534668
+  },
+  {
+    "rank": 50.0,
+    "player_display_name": "Bryce Young",
+    "position": "QB",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 16.020633697509766,
+    "floor": 11.851638793945312,
+    "ceiling": 20.18962860107422
+  },
+  {
+    "rank": 51.0,
+    "player_display_name": "KC Concepcion",
+    "position": "WR",
+    "team": "CLE",
+    "opponent_team": "TB",
+    "projection": 15.971261978149414,
+    "floor": 11.802267074584961,
+    "ceiling": 20.140256881713867
+  },
+  {
+    "rank": 52.0,
+    "player_display_name": "Keon Coleman",
+    "position": "WR",
+    "team": "BUF",
+    "opponent_team": "DET",
+    "projection": 15.939190864562988,
+    "floor": 11.770196914672852,
+    "ceiling": 20.108184814453125
+  },
+  {
+    "rank": 53.0,
+    "player_display_name": "Rachaad White",
+    "position": "RB",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 15.883244514465332,
+    "floor": 11.714250564575195,
+    "ceiling": 20.05223846435547
+  },
+  {
+    "rank": 54.0,
+    "player_display_name": "Cam Ward",
+    "position": "QB",
+    "team": "TEN",
+    "opponent_team": "PHI",
+    "projection": 15.849594116210938,
+    "floor": 11.680599212646484,
+    "ceiling": 20.01858901977539
+  },
+  {
+    "rank": 55.0,
+    "player_display_name": "Carson Wentz",
+    "position": "QB",
+    "team": "MIN",
+    "opponent_team": "CHI",
+    "projection": 15.764622688293457,
+    "floor": 11.59562873840332,
+    "ceiling": 19.933616638183594
+  },
+  {
+    "rank": 56.0,
+    "player_display_name": "Justin Herbert",
+    "position": "QB",
+    "team": "LAC",
+    "opponent_team": "LV",
+    "projection": 15.753030776977539,
+    "floor": 11.584035873413086,
+    "ceiling": 19.922025680541992
+  },
+  {
+    "rank": 57.0,
+    "player_display_name": "Isaiah Williams",
+    "position": "WR",
+    "team": "NYJ",
+    "opponent_team": "GB",
+    "projection": 15.745359420776367,
+    "floor": 11.576364517211914,
+    "ceiling": 19.91435432434082
+  },
+  {
+    "rank": 58.0,
+    "player_display_name": "Baker Mayfield",
+    "position": "QB",
+    "team": "TB",
+    "opponent_team": "CLE",
+    "projection": 15.724967002868652,
+    "floor": 11.555973052978516,
+    "ceiling": 19.89396095275879
+  },
+  {
+    "rank": 59.0,
+    "player_display_name": "Aaron Jones",
+    "position": "RB",
+    "team": "MIN",
+    "opponent_team": "CHI",
+    "projection": 15.57555103302002,
+    "floor": 11.406557083129883,
+    "ceiling": 19.744544982910156
+  },
+  {
+    "rank": 60.0,
+    "player_display_name": "Quinshon Judkins",
+    "position": "RB",
+    "team": "CLE",
+    "opponent_team": "TB",
+    "projection": 15.483991622924805,
+    "floor": 11.314996719360352,
+    "ceiling": 19.652986526489258
+  },
+  {
+    "rank": 61.0,
+    "player_display_name": "Joe Burrow",
+    "position": "QB",
+    "team": "CIN",
+    "opponent_team": "HOU",
+    "projection": 15.332720756530762,
+    "floor": 11.163726806640625,
+    "ceiling": 19.5017147064209
+  },
+  {
+    "rank": 62.0,
+    "player_display_name": "Jacoby Brissett",
+    "position": "QB",
+    "team": "ARI",
+    "opponent_team": "SEA",
+    "projection": 15.28983211517334,
+    "floor": 11.120838165283203,
+    "ceiling": 19.458826065063477
+  },
+  {
+    "rank": 63.0,
+    "player_display_name": "Geno Smith",
+    "position": "QB",
+    "team": "NYJ",
+    "opponent_team": "GB",
+    "projection": 15.140410423278809,
+    "floor": 10.971416473388672,
+    "ceiling": 19.309404373168945
+  },
+  {
+    "rank": 64.0,
+    "player_display_name": "Tee Higgins",
+    "position": "WR",
+    "team": "CIN",
+    "opponent_team": "HOU",
+    "projection": 15.118077278137207,
+    "floor": 10.94908332824707,
+    "ceiling": 19.287071228027344
+  },
+  {
+    "rank": 65.0,
+    "player_display_name": "Terrance Ferguson",
+    "position": "TE",
+    "team": "LA",
+    "opponent_team": "NYG",
+    "projection": 14.92281723022461,
+    "floor": 10.753822326660156,
+    "ceiling": 19.091812133789062
+  },
+  {
+    "rank": 66.0,
+    "player_display_name": "Tyler Warren",
+    "position": "TE",
+    "team": "IND",
+    "opponent_team": "KC",
+    "projection": 14.825045585632324,
+    "floor": 10.656051635742188,
+    "ceiling": 18.99403953552246
+  },
+  {
+    "rank": 67.0,
+    "player_display_name": "Daniel Jones",
+    "position": "QB",
+    "team": "IND",
+    "opponent_team": "KC",
+    "projection": 14.809844017028809,
+    "floor": 10.640850067138672,
+    "ceiling": 18.978837966918945
+  },
+  {
+    "rank": 68.0,
+    "player_display_name": "Christian McCaffrey",
+    "position": "RB",
+    "team": "SF",
+    "opponent_team": "MIA",
+    "projection": 14.682029724121094,
+    "floor": 10.51303482055664,
+    "ceiling": 18.851024627685547
+  },
+  {
+    "rank": 69.0,
+    "player_display_name": "Mark Andrews",
+    "position": "TE",
+    "team": "BAL",
+    "opponent_team": "NO",
+    "projection": 14.66979694366455,
+    "floor": 10.500802993774414,
+    "ceiling": 18.838790893554688
+  },
+  {
+    "rank": 70.0,
+    "player_display_name": "Emanuel Wilson",
+    "position": "RB",
+    "team": "SEA",
+    "opponent_team": "ARI",
+    "projection": 14.635377883911133,
+    "floor": 10.46638298034668,
+    "ceiling": 18.804372787475586
+  },
+  {
+    "rank": 71.0,
+    "player_display_name": "Malik Willis",
+    "position": "QB",
+    "team": "MIA",
+    "opponent_team": "SF",
+    "projection": 14.632425308227539,
+    "floor": 10.463430404663086,
+    "ceiling": 18.801420211791992
+  },
+  {
+    "rank": 72.0,
+    "player_display_name": "Sam LaPorta",
+    "position": "TE",
+    "team": "DET",
+    "opponent_team": "BUF",
+    "projection": 14.606929779052734,
+    "floor": 10.437934875488281,
+    "ceiling": 18.775924682617188
+  },
+  {
+    "rank": 73.0,
+    "player_display_name": "Jordan Love",
+    "position": "QB",
+    "team": "GB",
+    "opponent_team": "NYJ",
+    "projection": 14.499770164489746,
+    "floor": 10.33077621459961,
+    "ceiling": 18.668764114379883
+  },
+  {
+    "rank": 74.0,
+    "player_display_name": "Tetairoa McMillan",
+    "position": "WR",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 14.273056030273438,
+    "floor": 10.104061126708984,
+    "ceiling": 18.44205093383789
+  },
+  {
+    "rank": 75.0,
+    "player_display_name": "Denzel Boston",
+    "position": "WR",
+    "team": "CLE",
+    "opponent_team": "TB",
+    "projection": 14.165217399597168,
+    "floor": 9.996223449707031,
+    "ceiling": 18.334211349487305
+  },
+  {
+    "rank": 76.0,
+    "player_display_name": "Devaughn Vele",
+    "position": "WR",
+    "team": "NO",
+    "opponent_team": "BAL",
+    "projection": 14.08481216430664,
+    "floor": 9.915817260742188,
+    "ceiling": 18.253807067871094
+  },
+  {
+    "rank": 77.0,
+    "player_display_name": "Christian Watson",
+    "position": "WR",
+    "team": "GB",
+    "opponent_team": "NYJ",
+    "projection": 14.078120231628418,
+    "floor": 9.909126281738281,
+    "ceiling": 18.247114181518555
+  },
+  {
+    "rank": 78.0,
+    "player_display_name": "Alvin Kamara",
+    "position": "RB",
+    "team": "NO",
+    "opponent_team": "BAL",
+    "projection": 14.073379516601562,
+    "floor": 9.90438461303711,
+    "ceiling": 18.242374420166016
+  },
+  {
+    "rank": 79.0,
+    "player_display_name": "Javonte Williams",
+    "position": "RB",
+    "team": "DAL",
+    "opponent_team": "WAS",
+    "projection": 14.043736457824707,
+    "floor": 9.87474250793457,
+    "ceiling": 18.212730407714844
+  },
+  {
+    "rank": 80.0,
+    "player_display_name": "Stefon Diggs",
+    "position": "WR",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 13.953189849853516,
+    "floor": 9.784194946289062,
+    "ceiling": 18.12218475341797
+  },
+  {
+    "rank": 81.0,
+    "player_display_name": "Ryan Flournoy",
+    "position": "WR",
+    "team": "DAL",
+    "opponent_team": "WAS",
+    "projection": 13.823419570922852,
+    "floor": 9.654424667358398,
+    "ceiling": 17.992414474487305
+  },
+  {
+    "rank": 82.0,
+    "player_display_name": "Tre Tucker",
+    "position": "WR",
+    "team": "LV",
+    "opponent_team": "LAC",
+    "projection": 13.68285846710205,
+    "floor": 9.513864517211914,
+    "ceiling": 17.851852416992188
+  },
+  {
+    "rank": 83.0,
+    "player_display_name": "Garrett Wilson",
+    "position": "WR",
+    "team": "NYJ",
+    "opponent_team": "GB",
+    "projection": 13.570172309875488,
+    "floor": 9.401178359985352,
+    "ceiling": 17.739166259765625
+  },
+  {
+    "rank": 84.0,
+    "player_display_name": "Kalif Raymond",
+    "position": "WR",
+    "team": "CHI",
+    "opponent_team": "MIN",
+    "projection": 13.523040771484375,
+    "floor": 9.354045867919922,
+    "ceiling": 17.692035675048828
+  },
+  {
+    "rank": 85.0,
+    "player_display_name": "Isaiah Likely",
+    "position": "TE",
+    "team": "NYG",
+    "opponent_team": "LA",
+    "projection": 13.515619277954102,
+    "floor": 9.346624374389648,
+    "ceiling": 17.684614181518555
+  },
+  {
+    "rank": 86.0,
+    "player_display_name": "Dontayvion Wicks",
+    "position": "WR",
+    "team": "PHI",
+    "opponent_team": "TEN",
+    "projection": 13.355205535888672,
+    "floor": 9.186210632324219,
+    "ceiling": 17.524200439453125
+  },
+  {
+    "rank": 87.0,
+    "player_display_name": "Xavier Worthy",
+    "position": "WR",
+    "team": "KC",
+    "opponent_team": "IND",
+    "projection": 13.308889389038086,
+    "floor": 9.139894485473633,
+    "ceiling": 17.47788429260254
+  },
+  {
+    "rank": 88.0,
+    "player_display_name": "Roman Wilson",
+    "position": "WR",
+    "team": "PIT",
+    "opponent_team": "NE",
+    "projection": 13.11356258392334,
+    "floor": 8.944568634033203,
+    "ceiling": 17.282556533813477
+  },
+  {
+    "rank": 89.0,
+    "player_display_name": "Woody Marks",
+    "position": "RB",
+    "team": "HOU",
+    "opponent_team": "CIN",
+    "projection": 13.05449104309082,
+    "floor": 8.885496139526367,
+    "ceiling": 17.223485946655273
+  },
+  {
+    "rank": 90.0,
+    "player_display_name": "Harold Fannin Jr.",
+    "position": "TE",
+    "team": "CLE",
+    "opponent_team": "TB",
+    "projection": 12.740854263305664,
+    "floor": 8.571859359741211,
+    "ceiling": 16.909849166870117
+  },
+  {
+    "rank": 91.0,
+    "player_display_name": "Aaron Rodgers",
+    "position": "QB",
+    "team": "PIT",
+    "opponent_team": "NE",
+    "projection": 12.455248832702637,
+    "floor": 8.2862548828125,
+    "ceiling": 16.624242782592773
+  },
+  {
+    "rank": 92.0,
+    "player_display_name": "Cade Otton",
+    "position": "TE",
+    "team": "TB",
+    "opponent_team": "CLE",
+    "projection": 12.43419075012207,
+    "floor": 8.265195846557617,
+    "ceiling": 16.603185653686523
+  },
+  {
+    "rank": 93.0,
+    "player_display_name": "Tony Pollard",
+    "position": "RB",
+    "team": "TEN",
+    "opponent_team": "PHI",
+    "projection": 12.129386901855469,
+    "floor": 7.960392475128174,
+    "ceiling": 16.298381805419922
+  },
+  {
+    "rank": 94.0,
+    "player_display_name": "TreVeyon Henderson",
+    "position": "RB",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 12.042431831359863,
+    "floor": 7.873437404632568,
+    "ceiling": 16.21142578125
+  },
+  {
+    "rank": 95.0,
+    "player_display_name": "DK Metcalf",
+    "position": "WR",
+    "team": "PIT",
+    "opponent_team": "NE",
+    "projection": 11.764775276184082,
+    "floor": 7.595780849456787,
+    "ceiling": 15.933769226074219
+  },
+  {
+    "rank": 96.0,
+    "player_display_name": "Jonah Coleman",
+    "position": "RB",
+    "team": "DEN",
+    "opponent_team": "JAX",
+    "projection": 11.697261810302734,
+    "floor": 7.5282673835754395,
+    "ceiling": 15.866256713867188
+  },
+  {
+    "rank": 97.0,
+    "player_display_name": "Bhayshul Tuten",
+    "position": "RB",
+    "team": "JAX",
+    "opponent_team": "DEN",
+    "projection": 11.679542541503906,
+    "floor": 7.510548114776611,
+    "ceiling": 15.84853744506836
+  },
+  {
+    "rank": 98.0,
+    "player_display_name": "Kyren Williams",
+    "position": "RB",
+    "team": "LA",
+    "opponent_team": "NYG",
+    "projection": 11.668926239013672,
+    "floor": 7.499931812286377,
+    "ceiling": 15.837921142578125
+  },
+  {
+    "rank": 99.0,
+    "player_display_name": "Drew Lock",
+    "position": "QB",
+    "team": "SEA",
+    "opponent_team": "ARI",
+    "projection": 11.575940132141113,
+    "floor": 7.406945705413818,
+    "ceiling": 15.74493408203125
+  },
+  {
+    "rank": 100.0,
+    "player_display_name": "Jayden Daniels",
+    "position": "QB",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 11.527223587036133,
+    "floor": 7.358229160308838,
+    "ceiling": 15.696218490600586
+  },
+  {
+    "rank": 101.0,
+    "player_display_name": "Tank Bigsby",
+    "position": "RB",
+    "team": "PHI",
+    "opponent_team": "TEN",
+    "projection": 11.254758834838867,
+    "floor": 7.085764408111572,
+    "ceiling": 15.42375373840332
+  },
+  {
+    "rank": 102.0,
+    "player_display_name": "Drake London",
+    "position": "WR",
+    "team": "ATL",
+    "opponent_team": "CAR",
+    "projection": 11.214393615722656,
+    "floor": 7.045399188995361,
+    "ceiling": 15.38338851928711
+  },
+  {
+    "rank": 103.0,
+    "player_display_name": "Matthew Golden",
+    "position": "WR",
+    "team": "GB",
+    "opponent_team": "NYJ",
+    "projection": 11.182612419128418,
+    "floor": 7.013617992401123,
+    "ceiling": 15.351606369018555
+  },
+  {
+    "rank": 104.0,
+    "player_display_name": "Rashee Rice",
+    "position": "WR",
+    "team": "KC",
+    "opponent_team": "IND",
+    "projection": 11.105361938476562,
+    "floor": 6.936367511749268,
+    "ceiling": 15.274356842041016
+  },
+  {
+    "rank": 105.0,
+    "player_display_name": "Chuba Hubbard",
+    "position": "RB",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 10.984804153442383,
+    "floor": 6.815809726715088,
+    "ceiling": 15.153799057006836
+  },
+  {
+    "rank": 106.0,
+    "player_display_name": "Malik Washington",
+    "position": "WR",
+    "team": "MIA",
+    "opponent_team": "SF",
+    "projection": 10.979349136352539,
+    "floor": 6.810354709625244,
+    "ceiling": 15.148344039916992
+  },
+  {
+    "rank": 107.0,
+    "player_display_name": "Dyami Brown",
+    "position": "WR",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 10.819256782531738,
+    "floor": 6.650262355804443,
+    "ceiling": 14.988250732421875
+  },
+  {
+    "rank": 108.0,
+    "player_display_name": "Jacory Croskey-Merritt",
+    "position": "RB",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 10.807472229003906,
+    "floor": 6.638477802276611,
+    "ceiling": 14.97646713256836
+  },
+  {
+    "rank": 109.0,
+    "player_display_name": "George Kittle",
+    "position": "TE",
+    "team": "SF",
+    "opponent_team": "MIA",
+    "projection": 10.774483680725098,
+    "floor": 6.605489253997803,
+    "ceiling": 14.943477630615234
+  },
+  {
+    "rank": 110.0,
+    "player_display_name": "Brian Robinson",
+    "position": "RB",
+    "team": "ATL",
+    "opponent_team": "CAR",
+    "projection": 10.706539154052734,
+    "floor": 6.5375447273254395,
+    "ceiling": 14.875534057617188
+  },
+  {
+    "rank": 111.0,
+    "player_display_name": "Jaylen Warren",
+    "position": "RB",
+    "team": "PIT",
+    "opponent_team": "NE",
+    "projection": 10.498437881469727,
+    "floor": 6.329443454742432,
+    "ceiling": 14.66743278503418
+  },
+  {
+    "rank": 112.0,
+    "player_display_name": "Blake Corum",
+    "position": "RB",
+    "team": "LA",
+    "opponent_team": "NYG",
+    "projection": 10.202582359313965,
+    "floor": 6.03358793258667,
+    "ceiling": 14.371576309204102
+  },
+  {
+    "rank": 113.0,
+    "player_display_name": "Tyquan Thornton",
+    "position": "WR",
+    "team": "KC",
+    "opponent_team": "IND",
+    "projection": 10.169468879699707,
+    "floor": 6.000474452972412,
+    "ceiling": 14.338462829589844
+  },
+  {
+    "rank": 114.0,
+    "player_display_name": "Jeremiyah Love",
+    "position": "RB",
+    "team": "ARI",
+    "opponent_team": "SEA",
+    "projection": 10.108490943908691,
+    "floor": 5.9394965171813965,
+    "ceiling": 14.277484893798828
+  },
+  {
+    "rank": 115.0,
+    "player_display_name": "Jadarian Price",
+    "position": "RB",
+    "team": "SEA",
+    "opponent_team": "ARI",
+    "projection": 10.10350513458252,
+    "floor": 5.934510707855225,
+    "ceiling": 14.272499084472656
+  },
+  {
+    "rank": 116.0,
+    "player_display_name": "Juwan Johnson",
+    "position": "TE",
+    "team": "NO",
+    "opponent_team": "BAL",
+    "projection": 10.070287704467773,
+    "floor": 5.9012932777404785,
+    "ceiling": 14.239282608032227
+  },
+  {
+    "rank": 117.0,
+    "player_display_name": "Pat Freiermuth",
+    "position": "TE",
+    "team": "PIT",
+    "opponent_team": "NE",
+    "projection": 10.004932403564453,
+    "floor": 5.835937976837158,
+    "ceiling": 14.173927307128906
+  },
+  {
+    "rank": 118.0,
+    "player_display_name": "Jake Ferguson",
+    "position": "TE",
+    "team": "DAL",
+    "opponent_team": "WAS",
+    "projection": 9.636124610900879,
+    "floor": 5.467130184173584,
+    "ceiling": 13.805118560791016
+  },
+  {
+    "rank": 119.0,
+    "player_display_name": "Justin Jefferson",
+    "position": "WR",
+    "team": "MIN",
+    "opponent_team": "CHI",
+    "projection": 9.220227241516113,
+    "floor": 5.051232814788818,
+    "ceiling": 13.38922119140625
+  },
+  {
+    "rank": 120.0,
+    "player_display_name": "Antonio Williams",
+    "position": "WR",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 8.959566116333008,
+    "floor": 4.790571689605713,
+    "ceiling": 13.128561019897461
+  },
+  {
+    "rank": 121.0,
+    "player_display_name": "Kyle Monangai",
+    "position": "RB",
+    "team": "CHI",
+    "opponent_team": "MIN",
+    "projection": 8.880788803100586,
+    "floor": 4.711794376373291,
+    "ceiling": 13.049783706665039
+  },
+  {
+    "rank": 122.0,
+    "player_display_name": "Carnell Tate",
+    "position": "WR",
+    "team": "TEN",
+    "opponent_team": "PHI",
+    "projection": 8.739527702331543,
+    "floor": 4.570533275604248,
+    "ceiling": 12.90852165222168
+  },
+  {
+    "rank": 123.0,
+    "player_display_name": "Deebo Samuel Sr.",
+    "position": "WR",
+    "team": "SF",
+    "opponent_team": "MIA",
+    "projection": 8.676948547363281,
+    "floor": 4.507954120635986,
+    "ceiling": 12.845943450927734
+  },
+  {
+    "rank": 124.0,
+    "player_display_name": "Travis Etienne",
+    "position": "RB",
+    "team": "NO",
+    "opponent_team": "BAL",
+    "projection": 8.627328872680664,
+    "floor": 4.458334445953369,
+    "ceiling": 12.796323776245117
+  },
+  {
+    "rank": 125.0,
+    "player_display_name": "Luther Burden III",
+    "position": "WR",
+    "team": "CHI",
+    "opponent_team": "MIN",
+    "projection": 8.594500541687012,
+    "floor": 4.425506114959717,
+    "ceiling": 12.763494491577148
+  },
+  {
+    "rank": 126.0,
+    "player_display_name": "Brian Thomas Jr.",
+    "position": "WR",
+    "team": "JAX",
+    "opponent_team": "DEN",
+    "projection": 8.563779830932617,
+    "floor": 4.394785404205322,
+    "ceiling": 12.73277473449707
+  },
+  {
+    "rank": 127.0,
+    "player_display_name": "Demarcus Robinson",
+    "position": "WR",
+    "team": "SF",
+    "opponent_team": "MIA",
+    "projection": 8.4870023727417,
+    "floor": 4.318007946014404,
+    "ceiling": 12.655996322631836
+  },
+  {
+    "rank": 128.0,
+    "player_display_name": "Romeo Doubs",
+    "position": "WR",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 8.470381736755371,
+    "floor": 4.301387310028076,
+    "ceiling": 12.639375686645508
+  },
+  {
+    "rank": 129.0,
+    "player_display_name": "Emeka Egbuka",
+    "position": "WR",
+    "team": "TB",
+    "opponent_team": "CLE",
+    "projection": 8.463187217712402,
+    "floor": 4.294192790985107,
+    "ceiling": 12.632181167602539
+  },
+  {
+    "rank": 130.0,
+    "player_display_name": "Khalil Shakir",
+    "position": "WR",
+    "team": "BUF",
+    "opponent_team": "DET",
+    "projection": 8.439729690551758,
+    "floor": 4.270735263824463,
+    "ceiling": 12.608724594116211
+  },
+  {
+    "rank": 131.0,
+    "player_display_name": "Rashid Shaheed",
+    "position": "WR",
+    "team": "SEA",
+    "opponent_team": "ARI",
+    "projection": 8.43464183807373,
+    "floor": 4.2656474113464355,
+    "ceiling": 12.603635787963867
+  },
+  {
+    "rank": 132.0,
+    "player_display_name": "Hunter Henry",
+    "position": "TE",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 8.42750072479248,
+    "floor": 4.2585062980651855,
+    "ceiling": 12.596494674682617
+  },
+  {
+    "rank": 133.0,
+    "player_display_name": "Chris Godwin Jr.",
+    "position": "WR",
+    "team": "TB",
+    "opponent_team": "CLE",
+    "projection": 8.418710708618164,
+    "floor": 4.249716281890869,
+    "ceiling": 12.587705612182617
+  },
+  {
+    "rank": 134.0,
+    "player_display_name": "David Montgomery",
+    "position": "RB",
+    "team": "HOU",
+    "opponent_team": "CIN",
+    "projection": 8.179292678833008,
+    "floor": 4.010298252105713,
+    "ceiling": 12.348287582397461
+  },
+  {
+    "rank": 135.0,
+    "player_display_name": "Mike Evans",
+    "position": "WR",
+    "team": "SF",
+    "opponent_team": "MIA",
+    "projection": 8.121739387512207,
+    "floor": 3.952744960784912,
+    "ceiling": 12.290733337402344
+  },
+  {
+    "rank": 136.0,
+    "player_display_name": "Ladd McConkey",
+    "position": "WR",
+    "team": "LAC",
+    "opponent_team": "LV",
+    "projection": 8.099502563476562,
+    "floor": 3.9305081367492676,
+    "ceiling": 12.268497467041016
+  },
+  {
+    "rank": 137.0,
+    "player_display_name": "Rome Odunze",
+    "position": "WR",
+    "team": "CHI",
+    "opponent_team": "MIN",
+    "projection": 7.989463806152344,
+    "floor": 3.820469379425049,
+    "ceiling": 12.158458709716797
+  },
+  {
+    "rank": 138.0,
+    "player_display_name": "Will Shipley",
+    "position": "RB",
+    "team": "PHI",
+    "opponent_team": "TEN",
+    "projection": 7.866854667663574,
+    "floor": 3.6978602409362793,
+    "ceiling": 12.035848617553711
+  },
+  {
+    "rank": 139.0,
+    "player_display_name": "Kenny Gainwell",
+    "position": "RB",
+    "team": "TB",
+    "opponent_team": "CLE",
+    "projection": 7.841291904449463,
+    "floor": 3.672297477722168,
+    "ceiling": 12.010286331176758
+  },
+  {
+    "rank": 140.0,
+    "player_display_name": "Courtland Sutton",
+    "position": "WR",
+    "team": "DEN",
+    "opponent_team": "JAX",
+    "projection": 7.8322978019714355,
+    "floor": 3.6633033752441406,
+    "ceiling": 12.00129222869873
+  },
+  {
+    "rank": 141.0,
+    "player_display_name": "Nate Adkins",
+    "position": "TE",
+    "team": "DEN",
+    "opponent_team": "JAX",
+    "projection": 7.792761325836182,
+    "floor": 3.6237668991088867,
+    "ceiling": 11.961755752563477
+  },
+  {
+    "rank": 142.0,
+    "player_display_name": "Tyjae Spears",
+    "position": "RB",
+    "team": "TEN",
+    "opponent_team": "PHI",
+    "projection": 7.756300449371338,
+    "floor": 3.587306022644043,
+    "ceiling": 11.925294876098633
+  },
+  {
+    "rank": 143.0,
+    "player_display_name": "T.J. Hockenson",
+    "position": "TE",
+    "team": "MIN",
+    "opponent_team": "CHI",
+    "projection": 7.755396366119385,
+    "floor": 3.58640193939209,
+    "ceiling": 11.92439079284668
+  },
+  {
+    "rank": 144.0,
+    "player_display_name": "Darren Waller",
+    "position": "TE",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 7.74298620223999,
+    "floor": 3.5739917755126953,
+    "ceiling": 11.911980628967285
+  },
+  {
+    "rank": 145.0,
+    "player_display_name": "Tyler Allgeier",
+    "position": "RB",
+    "team": "ARI",
+    "opponent_team": "SEA",
+    "projection": 7.706953525543213,
+    "floor": 3.537959098815918,
+    "ceiling": 11.875947952270508
+  },
+  {
+    "rank": 146.0,
+    "player_display_name": "Xavier Hutchinson",
+    "position": "WR",
+    "team": "HOU",
+    "opponent_team": "CIN",
+    "projection": 7.705491542816162,
+    "floor": 3.536497116088867,
+    "ceiling": 11.874485969543457
+  },
+  {
+    "rank": 147.0,
+    "player_display_name": "Michael Mayer",
+    "position": "TE",
+    "team": "LV",
+    "opponent_team": "LAC",
+    "projection": 7.668498992919922,
+    "floor": 3.499504566192627,
+    "ceiling": 11.837493896484375
+  },
+  {
+    "rank": 148.0,
+    "player_display_name": "Kayshon Boutte",
+    "position": "WR",
+    "team": "HOU",
+    "opponent_team": "CIN",
+    "projection": 7.641381740570068,
+    "floor": 3.4723873138427734,
+    "ceiling": 11.810376167297363
+  },
+  {
+    "rank": 149.0,
+    "player_display_name": "Laquon Treadwell",
+    "position": "WR",
+    "team": "IND",
+    "opponent_team": "KC",
+    "projection": 7.514922618865967,
+    "floor": 3.345928192138672,
+    "ceiling": 11.683917045593262
+  },
+  {
+    "rank": 150.0,
+    "player_display_name": "Rico Dowdle",
+    "position": "RB",
+    "team": "PIT",
+    "opponent_team": "NE",
+    "projection": 7.41604471206665,
+    "floor": 3.2470502853393555,
+    "ceiling": 11.585039138793945
+  },
+  {
+    "rank": 151.0,
+    "player_display_name": "Charlie Kolar",
+    "position": "TE",
+    "team": "LAC",
+    "opponent_team": "LV",
+    "projection": 7.272517204284668,
+    "floor": 3.103522777557373,
+    "ceiling": 11.441511154174805
+  },
+  {
+    "rank": 152.0,
+    "player_display_name": "Caleb Douglas",
+    "position": "WR",
+    "team": "MIA",
+    "opponent_team": "SF",
+    "projection": 7.062408447265625,
+    "floor": 2.89341402053833,
+    "ceiling": 11.231403350830078
+  },
+  {
+    "rank": 153.0,
+    "player_display_name": "MarShawn Lloyd",
+    "position": "RB",
+    "team": "GB",
+    "opponent_team": "NYJ",
+    "projection": 6.8986616134643555,
+    "floor": 2.7296671867370605,
+    "ceiling": 11.067655563354492
+  },
+  {
+    "rank": 154.0,
+    "player_display_name": "J.K. Dobbins",
+    "position": "RB",
+    "team": "DEN",
+    "opponent_team": "JAX",
+    "projection": 6.676992416381836,
+    "floor": 2.507997989654541,
+    "ceiling": 10.845987319946289
+  },
+  {
+    "rank": 155.0,
+    "player_display_name": "Terry McLaurin",
+    "position": "WR",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 6.48651123046875,
+    "floor": 2.317516803741455,
+    "ceiling": 10.655506134033203
+  },
+  {
+    "rank": 156.0,
+    "player_display_name": "Tucker Kraft",
+    "position": "TE",
+    "team": "GB",
+    "opponent_team": "NYJ",
+    "projection": 6.316705226898193,
+    "floor": 2.1477108001708984,
+    "ceiling": 10.485699653625488
+  },
+  {
+    "rank": 157.0,
+    "player_display_name": "Ted Hurst III",
+    "position": "WR",
+    "team": "TB",
+    "opponent_team": "CLE",
+    "projection": 6.089071273803711,
+    "floor": 1.920076847076416,
+    "ceiling": 10.258066177368164
+  },
+  {
+    "rank": 158.0,
+    "player_display_name": "Jordan Addison",
+    "position": "WR",
+    "team": "MIN",
+    "opponent_team": "CHI",
+    "projection": 6.0168328285217285,
+    "floor": 1.8478384017944336,
+    "ceiling": 10.185827255249023
+  },
+  {
+    "rank": 159.0,
+    "player_display_name": "Malachi Fields",
+    "position": "WR",
+    "team": "NYG",
+    "opponent_team": "LA",
+    "projection": 5.791335105895996,
+    "floor": 1.6223406791687012,
+    "ceiling": 9.960329055786133
+  },
+  {
+    "rank": 160.0,
+    "player_display_name": "Jameson Williams",
+    "position": "WR",
+    "team": "DET",
+    "opponent_team": "BUF",
+    "projection": 5.659158706665039,
+    "floor": 1.4901642799377441,
+    "ceiling": 9.828153610229492
+  },
+  {
+    "rank": 161.0,
+    "player_display_name": "Tyler Badie",
+    "position": "RB",
+    "team": "DEN",
+    "opponent_team": "JAX",
+    "projection": 5.580473899841309,
+    "floor": 1.4114794731140137,
+    "ceiling": 9.749467849731445
+  },
+  {
+    "rank": 162.0,
+    "player_display_name": "Michael Wilson",
+    "position": "WR",
+    "team": "ARI",
+    "opponent_team": "SEA",
+    "projection": 5.558196544647217,
+    "floor": 1.3892021179199219,
+    "ceiling": 9.727190971374512
+  },
+  {
+    "rank": 163.0,
+    "player_display_name": "Colby Parkinson",
+    "position": "TE",
+    "team": "LA",
+    "opponent_team": "NYG",
+    "projection": 5.554935455322266,
+    "floor": 1.3859410285949707,
+    "ceiling": 9.723930358886719
+  },
+  {
+    "rank": 164.0,
+    "player_display_name": "Elic Ayomanor",
+    "position": "WR",
+    "team": "TEN",
+    "opponent_team": "PHI",
+    "projection": 5.484832286834717,
+    "floor": 1.3158378601074219,
+    "ceiling": 9.653826713562012
+  },
+  {
+    "rank": 165.0,
+    "player_display_name": "Jared Wayne",
+    "position": "WR",
+    "team": "HOU",
+    "opponent_team": "CIN",
+    "projection": 5.469650745391846,
+    "floor": 1.3006563186645508,
+    "ceiling": 9.63864517211914
+  },
+  {
+    "rank": 166.0,
+    "player_display_name": "Isaac TeSlaa",
+    "position": "WR",
+    "team": "DET",
+    "opponent_team": "BUF",
+    "projection": 5.441239356994629,
+    "floor": 1.272244930267334,
+    "ceiling": 9.610233306884766
+  },
+  {
+    "rank": 167.0,
+    "player_display_name": "Xavier Legette",
+    "position": "WR",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 5.410688877105713,
+    "floor": 1.241694450378418,
+    "ceiling": 9.579683303833008
+  },
+  {
+    "rank": 168.0,
+    "player_display_name": "Kendrick Bourne",
+    "position": "WR",
+    "team": "ARI",
+    "opponent_team": "SEA",
+    "projection": 5.334871292114258,
+    "floor": 1.165876865386963,
+    "ceiling": 9.503866195678711
+  },
+  {
+    "rank": 169.0,
+    "player_display_name": "Austin Hooper",
+    "position": "TE",
+    "team": "ATL",
+    "opponent_team": "CAR",
+    "projection": 5.328329086303711,
+    "floor": 1.159334659576416,
+    "ceiling": 9.497323989868164
+  },
+  {
+    "rank": 170.0,
+    "player_display_name": "Skyy Moore",
+    "position": "WR",
+    "team": "GB",
+    "opponent_team": "NYJ",
+    "projection": 5.317469596862793,
+    "floor": 1.148475170135498,
+    "ceiling": 9.48646354675293
+  },
+  {
+    "rank": 171.0,
+    "player_display_name": "Greg Dulcich",
+    "position": "TE",
+    "team": "MIA",
+    "opponent_team": "SF",
+    "projection": 5.31032657623291,
+    "floor": 1.1413321495056152,
+    "ceiling": 9.479320526123047
+  },
+  {
+    "rank": 172.0,
+    "player_display_name": "Brenton Strange",
+    "position": "TE",
+    "team": "JAX",
+    "opponent_team": "DEN",
+    "projection": 5.308595657348633,
+    "floor": 1.139601230621338,
+    "ceiling": 9.477590560913086
+  },
+  {
+    "rank": 173.0,
+    "player_display_name": "Darius Cooper",
+    "position": "WR",
+    "team": "PHI",
+    "opponent_team": "TEN",
+    "projection": 5.28359842300415,
+    "floor": 1.1146039962768555,
+    "ceiling": 9.452592849731445
+  },
+  {
+    "rank": 174.0,
+    "player_display_name": "Darnell Mooney",
+    "position": "WR",
+    "team": "NYG",
+    "opponent_team": "LA",
+    "projection": 5.279837131500244,
+    "floor": 1.1108427047729492,
+    "ceiling": 9.448831558227539
+  },
+  {
+    "rank": 175.0,
+    "player_display_name": "Cooper Kupp",
+    "position": "WR",
+    "team": "SEA",
+    "opponent_team": "ARI",
+    "projection": 5.276306629180908,
+    "floor": 1.1073122024536133,
+    "ceiling": 9.445301055908203
+  },
+  {
+    "rank": 176.0,
+    "player_display_name": "Calvin Ridley",
+    "position": "WR",
+    "team": "TEN",
+    "opponent_team": "PHI",
+    "projection": 5.271328926086426,
+    "floor": 1.1023344993591309,
+    "ceiling": 9.440322875976562
+  },
+  {
+    "rank": 177.0,
+    "player_display_name": "Rhamondre Stevenson",
+    "position": "RB",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 5.258353233337402,
+    "floor": 1.0893588066101074,
+    "ceiling": 9.427347183227539
+  },
+  {
+    "rank": 178.0,
+    "player_display_name": "Erick All",
+    "position": "TE",
+    "team": "CIN",
+    "opponent_team": "HOU",
+    "projection": 5.246948719024658,
+    "floor": 1.0779542922973633,
+    "ceiling": 9.415943145751953
+  },
+  {
+    "rank": 179.0,
+    "player_display_name": "Justice Hill",
+    "position": "RB",
+    "team": "BAL",
+    "opponent_team": "NO",
+    "projection": 5.231687545776367,
+    "floor": 1.0626931190490723,
+    "ceiling": 9.40068244934082
+  },
+  {
+    "rank": 180.0,
+    "player_display_name": "Jahan Dotson",
+    "position": "WR",
+    "team": "ATL",
+    "opponent_team": "CAR",
+    "projection": 5.223445892333984,
+    "floor": 1.0544514656066895,
+    "ceiling": 9.392440795898438
+  },
+  {
+    "rank": 181.0,
+    "player_display_name": "Kenyon Sadiq",
+    "position": "TE",
+    "team": "NYJ",
+    "opponent_team": "GB",
+    "projection": 5.135865688323975,
+    "floor": 0.9668712615966797,
+    "ceiling": 9.30486011505127
+  },
+  {
+    "rank": 182.0,
+    "player_display_name": "Jack Bech",
+    "position": "WR",
+    "team": "LV",
+    "opponent_team": "LAC",
+    "projection": 5.135776996612549,
+    "floor": 0.9667825698852539,
+    "ceiling": 9.304771423339844
+  },
+  {
+    "rank": 183.0,
+    "player_display_name": "Kaelon Black",
+    "position": "RB",
+    "team": "SF",
+    "opponent_team": "MIA",
+    "projection": 5.111067771911621,
+    "floor": 0.9420733451843262,
+    "ceiling": 9.280061721801758
+  },
+  {
+    "rank": 184.0,
+    "player_display_name": "Marcus Mariota",
+    "position": "QB",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 5.091949939727783,
+    "floor": 0.9229555130004883,
+    "ceiling": 9.260944366455078
+  },
+  {
+    "rank": 185.0,
+    "player_display_name": "Gunnar Helm",
+    "position": "TE",
+    "team": "TEN",
+    "opponent_team": "PHI",
+    "projection": 5.0614542961120605,
+    "floor": 0.8924598693847656,
+    "ceiling": 9.230448722839355
+  },
+  {
+    "rank": 186.0,
+    "player_display_name": "Dawson Knox",
+    "position": "TE",
+    "team": "BUF",
+    "opponent_team": "DET",
+    "projection": 5.0458149909973145,
+    "floor": 0.8768205642700195,
+    "ceiling": 9.21480941772461
+  },
+  {
+    "rank": 187.0,
+    "player_display_name": "Mack Hollins",
+    "position": "WR",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 5.035787105560303,
+    "floor": 0.8667926788330078,
+    "ceiling": 9.204781532287598
+  },
+  {
+    "rank": 188.0,
+    "player_display_name": "Zachariah Branch",
+    "position": "WR",
+    "team": "ATL",
+    "opponent_team": "CAR",
+    "projection": 5.024411678314209,
+    "floor": 0.8554172515869141,
+    "ceiling": 9.193406105041504
+  },
+  {
+    "rank": 189.0,
+    "player_display_name": "Oronde Gadsden II",
+    "position": "TE",
+    "team": "LAC",
+    "opponent_team": "LV",
+    "projection": 4.958289623260498,
+    "floor": 0.7892951965332031,
+    "ceiling": 9.127284049987793
+  },
+  {
+    "rank": 190.0,
+    "player_display_name": "Emmett Johnson",
+    "position": "RB",
+    "team": "KC",
+    "opponent_team": "IND",
+    "projection": 4.950990200042725,
+    "floor": 0.7819957733154297,
+    "ceiling": 9.11998462677002
+  },
+  {
+    "rank": 191.0,
+    "player_display_name": "Braelon Allen",
+    "position": "RB",
+    "team": "NYJ",
+    "opponent_team": "GB",
+    "projection": 4.926898002624512,
+    "floor": 0.7579035758972168,
+    "ceiling": 9.095891952514648
+  },
+  {
+    "rank": 192.0,
+    "player_display_name": "Cooper Rush",
+    "position": "QB",
+    "team": "ATL",
+    "opponent_team": "CAR",
+    "projection": 4.876312255859375,
+    "floor": 0.7073178291320801,
+    "ceiling": 9.045307159423828
+  },
+  {
+    "rank": 193.0,
+    "player_display_name": "Kaleb Johnson",
+    "position": "RB",
+    "team": "GB",
+    "opponent_team": "NYJ",
+    "projection": 4.851310729980469,
+    "floor": 0.6823163032531738,
+    "ceiling": 9.020305633544922
+  },
+  {
+    "rank": 194.0,
+    "player_display_name": "Johnny Mundt",
+    "position": "TE",
+    "team": "PHI",
+    "opponent_team": "TEN",
+    "projection": 4.848066806793213,
+    "floor": 0.679072380065918,
+    "ceiling": 9.017061233520508
+  },
+  {
+    "rank": 195.0,
+    "player_display_name": "Jalen Royals",
+    "position": "WR",
+    "team": "KC",
+    "opponent_team": "IND",
+    "projection": 4.8401055335998535,
+    "floor": 0.6711111068725586,
+    "ceiling": 9.009099960327148
+  },
+  {
+    "rank": 196.0,
+    "player_display_name": "Jeremy Ruckert",
+    "position": "TE",
+    "team": "NYJ",
+    "opponent_team": "GB",
+    "projection": 4.7023396492004395,
+    "floor": 0.5333452224731445,
+    "ceiling": 8.871334075927734
+  },
+  {
+    "rank": 197.0,
+    "player_display_name": "Foster Moreau",
+    "position": "TE",
+    "team": "HOU",
+    "opponent_team": "CIN",
+    "projection": 4.629773139953613,
+    "floor": 0.46077871322631836,
+    "ceiling": 8.79876708984375
+  },
+  {
+    "rank": 198.0,
+    "player_display_name": "Chris Brooks",
+    "position": "RB",
+    "team": "GB",
+    "opponent_team": "NYJ",
+    "projection": 4.398364543914795,
+    "floor": 0.2293701171875,
+    "ceiling": 8.56735897064209
+  },
+  {
+    "rank": 199.0,
+    "player_display_name": "Keaton Mitchell",
+    "position": "RB",
+    "team": "LAC",
+    "opponent_team": "LV",
+    "projection": 4.281835556030273,
+    "floor": 0.11284112930297852,
+    "ceiling": 8.450830459594727
+  },
+  {
+    "rank": 200.0,
+    "player_display_name": "Jonathon Brooks",
+    "position": "RB",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 4.278774261474609,
+    "floor": 0.10977983474731445,
+    "ceiling": 8.447769165039062
+  },
+  {
+    "rank": 201.0,
+    "player_display_name": "George Holani",
+    "position": "RB",
+    "team": "SEA",
+    "opponent_team": "ARI",
+    "projection": 3.963153123855591,
+    "floor": 0.0,
+    "ceiling": 8.132147789001465
+  },
+  {
+    "rank": 202.0,
+    "player_display_name": "Makai Lemon",
+    "position": "WR",
+    "team": "PHI",
+    "opponent_team": "TEN",
+    "projection": 3.586862325668335,
+    "floor": 0.0,
+    "ceiling": 7.755856513977051
+  },
+  {
+    "rank": 203.0,
+    "player_display_name": "Jakobi Meyers",
+    "position": "WR",
+    "team": "JAX",
+    "opponent_team": "DEN",
+    "projection": 3.5406100749969482,
+    "floor": 0.0,
+    "ceiling": 7.709604263305664
+  },
+  {
+    "rank": 204.0,
+    "player_display_name": "Malik Nabers",
+    "position": "WR",
+    "team": "NYG",
+    "opponent_team": "LA",
+    "projection": 3.4688382148742676,
+    "floor": 0.0,
+    "ceiling": 7.6378326416015625
+  },
+  {
+    "rank": 205.0,
+    "player_display_name": "Quentin Johnston",
+    "position": "WR",
+    "team": "LAC",
+    "opponent_team": "LV",
+    "projection": 3.3644556999206543,
+    "floor": 0.0,
+    "ceiling": 7.533450126647949
+  },
+  {
+    "rank": 206.0,
+    "player_display_name": "Bryce Lance",
+    "position": "WR",
+    "team": "NO",
+    "opponent_team": "BAL",
+    "projection": 3.326284408569336,
+    "floor": 0.0,
+    "ceiling": 7.495278835296631
+  },
+  {
+    "rank": 207.0,
+    "player_display_name": "Jaxson Dart",
+    "position": "QB",
+    "team": "NYG",
+    "opponent_team": "LA",
+    "projection": 3.269669532775879,
+    "floor": 0.0,
+    "ceiling": 7.438663959503174
+  },
+  {
+    "rank": 208.0,
+    "player_display_name": "Saquon Barkley",
+    "position": "RB",
+    "team": "PHI",
+    "opponent_team": "TEN",
+    "projection": 3.1742136478424072,
+    "floor": 0.0,
+    "ceiling": 7.343208312988281
+  },
+  {
+    "rank": 209.0,
+    "player_display_name": "Alec Pierce",
+    "position": "WR",
+    "team": "IND",
+    "opponent_team": "KC",
+    "projection": 3.172098398208618,
+    "floor": 0.0,
+    "ceiling": 7.341093063354492
+  },
+  {
+    "rank": 210.0,
+    "player_display_name": "AJ Barner",
+    "position": "TE",
+    "team": "SEA",
+    "opponent_team": "ARI",
+    "projection": 3.128845691680908,
+    "floor": 0.0,
+    "ceiling": 7.297840118408203
+  },
+  {
+    "rank": 211.0,
+    "player_display_name": "Jaylin Noel",
+    "position": "WR",
+    "team": "HOU",
+    "opponent_team": "CIN",
+    "projection": 3.0428452491760254,
+    "floor": 0.0,
+    "ceiling": 7.21183967590332
+  },
+  {
+    "rank": 212.0,
+    "player_display_name": "Chris Moore",
+    "position": "WR",
+    "team": "BAL",
+    "opponent_team": "NO",
+    "projection": 3.0100836753845215,
+    "floor": 0.0,
+    "ceiling": 7.179078102111816
+  },
+  {
+    "rank": 213.0,
+    "player_display_name": "LaJohntay Wester",
+    "position": "WR",
+    "team": "BAL",
+    "opponent_team": "NO",
+    "projection": 3.001911163330078,
+    "floor": 0.0,
+    "ceiling": 7.170905590057373
+  },
+  {
+    "rank": 214.0,
+    "player_display_name": "Ameer Abdullah",
+    "position": "RB",
+    "team": "JAX",
+    "opponent_team": "DEN",
+    "projection": 2.983292818069458,
+    "floor": 0.0,
+    "ceiling": 7.152287483215332
+  },
+  {
+    "rank": 215.0,
+    "player_display_name": "Josh Palmer",
+    "position": "WR",
+    "team": "BUF",
+    "opponent_team": "DET",
+    "projection": 2.972886085510254,
+    "floor": 0.0,
+    "ceiling": 7.141880512237549
+  },
+  {
+    "rank": 216.0,
+    "player_display_name": "Dallas Goedert",
+    "position": "TE",
+    "team": "PHI",
+    "opponent_team": "TEN",
+    "projection": 2.9615390300750732,
+    "floor": 0.0,
+    "ceiling": 7.130533218383789
+  },
+  {
+    "rank": 217.0,
+    "player_display_name": "Tez Johnson",
+    "position": "WR",
+    "team": "TB",
+    "opponent_team": "CLE",
+    "projection": 2.8914265632629395,
+    "floor": 0.0,
+    "ceiling": 7.060420989990234
+  },
+  {
+    "rank": 218.0,
+    "player_display_name": "Samaje Perine",
+    "position": "RB",
+    "team": "CIN",
+    "opponent_team": "HOU",
+    "projection": 2.8912160396575928,
+    "floor": 0.0,
+    "ceiling": 7.060210227966309
+  },
+  {
+    "rank": 219.0,
+    "player_display_name": "Chris Rodriguez Jr.",
+    "position": "RB",
+    "team": "JAX",
+    "opponent_team": "DEN",
+    "projection": 2.874593496322632,
+    "floor": 0.0,
+    "ceiling": 7.043587684631348
+  },
+  {
+    "rank": 220.0,
+    "player_display_name": "Chris Blair",
+    "position": "WR",
+    "team": "ATL",
+    "opponent_team": "CAR",
+    "projection": 2.8544790744781494,
+    "floor": 0.0,
+    "ceiling": 7.023473739624023
+  },
+  {
+    "rank": 221.0,
+    "player_display_name": "Wan'Dale Robinson",
+    "position": "WR",
+    "team": "TEN",
+    "opponent_team": "PHI",
+    "projection": 2.850288152694702,
+    "floor": 0.0,
+    "ceiling": 7.019282341003418
+  },
+  {
+    "rank": 222.0,
+    "player_display_name": "Jalen Nailor",
+    "position": "WR",
+    "team": "LV",
+    "opponent_team": "LAC",
+    "projection": 2.8439671993255615,
+    "floor": 0.0,
+    "ceiling": 7.012961387634277
+  },
+  {
+    "rank": 223.0,
+    "player_display_name": "David Njoku",
+    "position": "TE",
+    "team": "LAC",
+    "opponent_team": "LV",
+    "projection": 2.8331124782562256,
+    "floor": 0.0,
+    "ceiling": 7.002106666564941
+  },
+  {
+    "rank": 224.0,
+    "player_display_name": "DeMario Douglas",
+    "position": "WR",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 2.7980198860168457,
+    "floor": 0.0,
+    "ceiling": 6.967014312744141
+  },
+  {
+    "rank": 225.0,
+    "player_display_name": "DeeJay Dallas",
+    "position": "RB",
+    "team": "MIN",
+    "opponent_team": "CHI",
+    "projection": 2.7890467643737793,
+    "floor": 0.0,
+    "ceiling": 6.958041191101074
+  },
+  {
+    "rank": 226.0,
+    "player_display_name": "Olamide Zaccheaus",
+    "position": "WR",
+    "team": "ATL",
+    "opponent_team": "CAR",
+    "projection": 2.7842040061950684,
+    "floor": 0.0,
+    "ceiling": 6.953198432922363
+  },
+  {
+    "rank": 227.0,
+    "player_display_name": "Andrei Iosivas",
+    "position": "WR",
+    "team": "CIN",
+    "opponent_team": "HOU",
+    "projection": 2.7785322666168213,
+    "floor": 0.0,
+    "ceiling": 6.947526931762695
+  },
+  {
+    "rank": 228.0,
+    "player_display_name": "Devontez Walker",
+    "position": "WR",
+    "team": "BAL",
+    "opponent_team": "NO",
+    "projection": 2.7745697498321533,
+    "floor": 0.0,
+    "ceiling": 6.943564414978027
+  },
+  {
+    "rank": 229.0,
+    "player_display_name": "Konata Mumpfield",
+    "position": "WR",
+    "team": "LA",
+    "opponent_team": "NYG",
+    "projection": 2.772793769836426,
+    "floor": 0.0,
+    "ceiling": 6.941788196563721
+  },
+  {
+    "rank": 230.0,
+    "player_display_name": "Kyle Williams",
+    "position": "WR",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 2.769951343536377,
+    "floor": 0.0,
+    "ceiling": 6.938945770263672
+  },
+  {
+    "rank": 231.0,
+    "player_display_name": "Ben Sinnott",
+    "position": "TE",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 2.7549967765808105,
+    "floor": 0.0,
+    "ceiling": 6.9239912033081055
+  },
+  {
+    "rank": 232.0,
+    "player_display_name": "Tre Harris",
+    "position": "WR",
+    "team": "LAC",
+    "opponent_team": "LV",
+    "projection": 2.747368812561035,
+    "floor": 0.0,
+    "ceiling": 6.91636323928833
+  },
+  {
+    "rank": 233.0,
+    "player_display_name": "Tutu Atwell",
+    "position": "WR",
+    "team": "LA",
+    "opponent_team": "NYG",
+    "projection": 2.7125205993652344,
+    "floor": 0.0,
+    "ceiling": 6.881515026092529
+  },
+  {
+    "rank": 234.0,
+    "player_display_name": "Mitchell Evans",
+    "position": "TE",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 2.711829662322998,
+    "floor": 0.0,
+    "ceiling": 6.880824089050293
+  },
+  {
+    "rank": 235.0,
+    "player_display_name": "Davis Allen",
+    "position": "TE",
+    "team": "LA",
+    "opponent_team": "NYG",
+    "projection": 2.682210922241211,
+    "floor": 0.0,
+    "ceiling": 6.851205348968506
+  },
+  {
+    "rank": 236.0,
+    "player_display_name": "Darnell Washington",
+    "position": "TE",
+    "team": "PIT",
+    "opponent_team": "NE",
+    "projection": 2.6813061237335205,
+    "floor": 0.0,
+    "ceiling": 6.8503007888793945
+  },
+  {
+    "rank": 237.0,
+    "player_display_name": "Colston Loveland",
+    "position": "TE",
+    "team": "CHI",
+    "opponent_team": "MIN",
+    "projection": 2.678830623626709,
+    "floor": 0.0,
+    "ceiling": 6.847825050354004
+  },
+  {
+    "rank": 238.0,
+    "player_display_name": "Troy Franklin",
+    "position": "WR",
+    "team": "DEN",
+    "opponent_team": "JAX",
+    "projection": 2.6566977500915527,
+    "floor": 0.0,
+    "ceiling": 6.825692176818848
+  },
+  {
+    "rank": 239.0,
+    "player_display_name": "Reggie Gilliam",
+    "position": "RB",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 2.6403415203094482,
+    "floor": 0.0,
+    "ceiling": 6.809335708618164
+  },
+  {
+    "rank": 240.0,
+    "player_display_name": "Sione Vaki",
+    "position": "RB",
+    "team": "DET",
+    "opponent_team": "BUF",
+    "projection": 2.6333329677581787,
+    "floor": 0.0,
+    "ceiling": 6.8023271560668945
+  },
+  {
+    "rank": 241.0,
+    "player_display_name": "Blake Whiteheart",
+    "position": "TE",
+    "team": "CLE",
+    "opponent_team": "TB",
+    "projection": 2.630066156387329,
+    "floor": 0.0,
+    "ceiling": 6.799060821533203
+  },
+  {
+    "rank": 242.0,
+    "player_display_name": "Tommy Tremble",
+    "position": "TE",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 2.6298370361328125,
+    "floor": 0.0,
+    "ceiling": 6.798831462860107
+  },
+  {
+    "rank": 243.0,
+    "player_display_name": "KhaDarel Hodge",
+    "position": "WR",
+    "team": "SF",
+    "opponent_team": "MIA",
+    "projection": 2.629253625869751,
+    "floor": 0.0,
+    "ceiling": 6.798248291015625
+  },
+  {
+    "rank": 244.0,
+    "player_display_name": "Efton Chism III",
+    "position": "WR",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 2.6257712841033936,
+    "floor": 0.0,
+    "ceiling": 6.794765472412109
+  },
+  {
+    "rank": 245.0,
+    "player_display_name": "Dareke Young",
+    "position": "WR",
+    "team": "LV",
+    "opponent_team": "LAC",
+    "projection": 2.5659492015838623,
+    "floor": 0.0,
+    "ceiling": 6.734943389892578
+  },
+  {
+    "rank": 246.0,
+    "player_display_name": "Evan Engram",
+    "position": "TE",
+    "team": "DEN",
+    "opponent_team": "JAX",
+    "projection": 2.554875373840332,
+    "floor": 0.0,
+    "ceiling": 6.723869800567627
+  },
+  {
+    "rank": 247.0,
+    "player_display_name": "Kaytron Allen",
+    "position": "RB",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 2.5504679679870605,
+    "floor": 0.0,
+    "ceiling": 6.7194623947143555
+  },
+  {
+    "rank": 248.0,
+    "player_display_name": "Devin Singletary",
+    "position": "RB",
+    "team": "NYG",
+    "opponent_team": "LA",
+    "projection": 2.546327829360962,
+    "floor": 0.0,
+    "ceiling": 6.715322494506836
+  },
+  {
+    "rank": 249.0,
+    "player_display_name": "Ben Skowronek",
+    "position": "WR",
+    "team": "PIT",
+    "opponent_team": "NE",
+    "projection": 2.5326013565063477,
+    "floor": 0.0,
+    "ceiling": 6.701595783233643
+  },
+  {
+    "rank": 250.0,
+    "player_display_name": "Eli Raridon",
+    "position": "TE",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 2.491495132446289,
+    "floor": 0.0,
+    "ceiling": 6.660489559173584
+  },
+  {
+    "rank": 251.0,
+    "player_display_name": "Ryan Miller",
+    "position": "WR",
+    "team": "MIA",
+    "opponent_team": "SF",
+    "projection": 2.4885342121124268,
+    "floor": 0.0,
+    "ceiling": 6.657528877258301
+  },
+  {
+    "rank": 252.0,
+    "player_display_name": "Elijah Arroyo",
+    "position": "TE",
+    "team": "SEA",
+    "opponent_team": "ARI",
+    "projection": 2.4866719245910645,
+    "floor": 0.0,
+    "ceiling": 6.655666351318359
+  },
+  {
+    "rank": 253.0,
+    "player_display_name": "Josh Oliver",
+    "position": "TE",
+    "team": "MIN",
+    "opponent_team": "CHI",
+    "projection": 2.4807422161102295,
+    "floor": 0.0,
+    "ceiling": 6.649736404418945
+  },
+  {
+    "rank": 254.0,
+    "player_display_name": "Eric Saubert",
+    "position": "TE",
+    "team": "SEA",
+    "opponent_team": "ARI",
+    "projection": 2.470292329788208,
+    "floor": 0.0,
+    "ceiling": 6.639286994934082
+  },
+  {
+    "rank": 255.0,
+    "player_display_name": "Isaiah Bond",
+    "position": "WR",
+    "team": "CLE",
+    "opponent_team": "TB",
+    "projection": 2.363266706466675,
+    "floor": 0.0,
+    "ceiling": 6.532260894775391
+  },
+  {
+    "rank": 256.0,
+    "player_display_name": "Kyle Pitts",
+    "position": "TE",
+    "team": "ATL",
+    "opponent_team": "CAR",
+    "projection": 2.3619537353515625,
+    "floor": 0.0,
+    "ceiling": 6.530948162078857
+  },
+  {
+    "rank": 257.0,
+    "player_display_name": "Will Kacmarek",
+    "position": "TE",
+    "team": "MIA",
+    "opponent_team": "SF",
+    "projection": 2.358480453491211,
+    "floor": 0.0,
+    "ceiling": 6.527474880218506
+  },
+  {
+    "rank": 258.0,
+    "player_display_name": "Colson Yankoff",
+    "position": "TE",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 2.351173162460327,
+    "floor": 0.0,
+    "ceiling": 6.520167350769043
+  },
+  {
+    "rank": 259.0,
+    "player_display_name": "Ian Thomas",
+    "position": "TE",
+    "team": "LV",
+    "opponent_team": "LAC",
+    "projection": 2.345909833908081,
+    "floor": 0.0,
+    "ceiling": 6.514904022216797
+  },
+  {
+    "rank": 260.0,
+    "player_display_name": "Quintin Morris",
+    "position": "TE",
+    "team": "JAX",
+    "opponent_team": "DEN",
+    "projection": 2.3457348346710205,
+    "floor": 0.0,
+    "ceiling": 6.5147294998168945
+  },
+  {
+    "rank": 261.0,
+    "player_display_name": "Kevin Austin Jr.",
+    "position": "WR",
+    "team": "NO",
+    "opponent_team": "BAL",
+    "projection": 2.3410556316375732,
+    "floor": 0.0,
+    "ceiling": 6.510049819946289
+  },
+  {
+    "rank": 262.0,
+    "player_display_name": "Raheim Sanders",
+    "position": "RB",
+    "team": "CLE",
+    "opponent_team": "TB",
+    "projection": 2.3393056392669678,
+    "floor": 0.0,
+    "ceiling": 6.508299827575684
+  },
+  {
+    "rank": 263.0,
+    "player_display_name": "Keenan Allen",
+    "position": "WR",
+    "team": "IND",
+    "opponent_team": "KC",
+    "projection": 2.278876781463623,
+    "floor": 0.0,
+    "ceiling": 6.447871208190918
+  },
+  {
+    "rank": 264.0,
+    "player_display_name": "Jayden Reed",
+    "position": "WR",
+    "team": "GB",
+    "opponent_team": "NYJ",
+    "projection": 2.2477316856384277,
+    "floor": 0.0,
+    "ceiling": 6.416726112365723
+  },
+  {
+    "rank": 265.0,
+    "player_display_name": "Najee Harris",
+    "position": "RB",
+    "team": "NYG",
+    "opponent_team": "LA",
+    "projection": 2.120959520339966,
+    "floor": 0.0,
+    "ceiling": 6.28995418548584
+  },
+  {
+    "rank": 266.0,
+    "player_display_name": "Mac Jones",
+    "position": "QB",
+    "team": "SF",
+    "opponent_team": "MIA",
+    "projection": 1.5952622890472412,
+    "floor": 0.0,
+    "ceiling": 5.764256477355957
+  },
+  {
+    "rank": 267.0,
+    "player_display_name": "DJ Moore",
+    "position": "WR",
+    "team": "BUF",
+    "opponent_team": "DET",
+    "projection": 1.329676866531372,
+    "floor": 0.0,
+    "ceiling": 5.498671531677246
+  },
+  {
+    "rank": 268.0,
+    "player_display_name": "Ollie Gordon II",
+    "position": "RB",
+    "team": "MIA",
+    "opponent_team": "SF",
+    "projection": 1.2914180755615234,
+    "floor": 0.0,
+    "ceiling": 5.460412502288818
+  },
+  {
+    "rank": 269.0,
+    "player_display_name": "Josh Cameron",
+    "position": "WR",
+    "team": "JAX",
+    "opponent_team": "DEN",
+    "projection": 1.290988564491272,
+    "floor": 0.0,
+    "ceiling": 5.459982872009277
+  },
+  {
+    "rank": 270.0,
+    "player_display_name": "Emari Demercado",
+    "position": "RB",
+    "team": "DAL",
+    "opponent_team": "WAS",
+    "projection": 0.9555751085281372,
+    "floor": 0.0,
+    "ceiling": 5.124569416046143
+  },
+  {
+    "rank": 271.0,
+    "player_display_name": "AJ Dillon",
+    "position": "RB",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 0.9181085824966431,
+    "floor": 0.0,
+    "ceiling": 5.087102890014648
+  },
+  {
+    "rank": 272.0,
+    "player_display_name": "Marquise Brown",
+    "position": "WR",
+    "team": "PHI",
+    "opponent_team": "TEN",
+    "projection": 0.8810219764709473,
+    "floor": 0.0,
+    "ceiling": 5.050016403198242
+  },
+  {
+    "rank": 273.0,
+    "player_display_name": "Luke Farrell",
+    "position": "TE",
+    "team": "SF",
+    "opponent_team": "MIA",
+    "projection": 0.7314268946647644,
+    "floor": 0.0,
+    "ceiling": 4.900421142578125
+  },
+  {
+    "rank": 274.0,
+    "player_display_name": "CJ Donaldson",
+    "position": "RB",
+    "team": "NO",
+    "opponent_team": "BAL",
+    "projection": 0.7015107274055481,
+    "floor": 0.0,
+    "ceiling": 4.870505332946777
+  },
+  {
+    "rank": 275.0,
+    "player_display_name": "Mike Washington Jr.",
+    "position": "RB",
+    "team": "LV",
+    "opponent_team": "LAC",
+    "projection": 0.589126706123352,
+    "floor": 0.0,
+    "ceiling": 4.758121013641357
+  },
+  {
+    "rank": 276.0,
+    "player_display_name": "Cole Kmet",
+    "position": "TE",
+    "team": "CHI",
+    "opponent_team": "MIN",
+    "projection": 0.5868934988975525,
+    "floor": 0.0,
+    "ceiling": 4.755887985229492
+  },
+  {
+    "rank": 277.0,
+    "player_display_name": "Seth McGowan",
+    "position": "RB",
+    "team": "IND",
+    "opponent_team": "KC",
+    "projection": 0.585770308971405,
+    "floor": 0.0,
+    "ceiling": 4.754764556884766
+  },
+  {
+    "rank": 278.0,
+    "player_display_name": "Pat Bryant",
+    "position": "WR",
+    "team": "DEN",
+    "opponent_team": "JAX",
+    "projection": 0.5763663649559021,
+    "floor": 0.0,
+    "ceiling": 4.745360851287842
+  },
+  {
+    "rank": 279.0,
+    "player_display_name": "Travis Homer",
+    "position": "RB",
+    "team": "PIT",
+    "opponent_team": "NE",
+    "projection": 0.5588001608848572,
+    "floor": 0.0,
+    "ceiling": 4.727794647216797
+  },
+  {
+    "rank": 280.0,
+    "player_display_name": "KaVontae Turpin",
+    "position": "WR",
+    "team": "DAL",
+    "opponent_team": "WAS",
+    "projection": 0.5310236811637878,
+    "floor": 0.0,
+    "ceiling": 4.700017929077148
+  },
+  {
+    "rank": 281.0,
+    "player_display_name": "Mason Rudolph",
+    "position": "QB",
+    "team": "PIT",
+    "opponent_team": "NE",
+    "projection": 0.5234268307685852,
+    "floor": 0.0,
+    "ceiling": 4.6924214363098145
+  },
+  {
+    "rank": 282.0,
+    "player_display_name": "Tyson Bagent",
+    "position": "QB",
+    "team": "CHI",
+    "opponent_team": "MIN",
+    "projection": 0.5127543807029724,
+    "floor": 0.0,
+    "ceiling": 4.681748867034912
+  },
+  {
+    "rank": 283.0,
+    "player_display_name": "Kenny Pickett",
+    "position": "QB",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 0.510127067565918,
+    "floor": 0.0,
+    "ceiling": 4.679121494293213
+  },
+  {
+    "rank": 284.0,
+    "player_display_name": "Jaylen Wright",
+    "position": "RB",
+    "team": "MIA",
+    "opponent_team": "SF",
+    "projection": 0.5067688822746277,
+    "floor": 0.0,
+    "ceiling": 4.675763130187988
+  },
+  {
+    "rank": 285.0,
+    "player_display_name": "Bam Knight",
+    "position": "RB",
+    "team": "ARI",
+    "opponent_team": "SEA",
+    "projection": 0.4530557096004486,
+    "floor": 0.0,
+    "ceiling": 4.6220502853393555
+  },
+  {
+    "rank": 286.0,
+    "player_display_name": "Durham Smythe",
+    "position": "TE",
+    "team": "BAL",
+    "opponent_team": "NO",
+    "projection": 0.4467613101005554,
+    "floor": 0.0,
+    "ceiling": 4.615755558013916
+  },
+  {
+    "rank": 287.0,
+    "player_display_name": "Hunter Luepke",
+    "position": "RB",
+    "team": "DAL",
+    "opponent_team": "WAS",
+    "projection": 0.35300490260124207,
+    "floor": 0.0,
+    "ceiling": 4.521999359130859
+  },
+  {
+    "rank": 288.0,
+    "player_display_name": "Theo Johnson",
+    "position": "TE",
+    "team": "NYG",
+    "opponent_team": "LA",
+    "projection": 0.32439833879470825,
+    "floor": 0.0,
+    "ceiling": 4.4933929443359375
+  },
+  {
+    "rank": 289.0,
+    "player_display_name": "Corey Kiner",
+    "position": "RB",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 0.2329709231853485,
+    "floor": 0.0,
+    "ceiling": 4.401965141296387
+  },
+  {
+    "rank": 290.0,
+    "player_display_name": "Jacob Cowing",
+    "position": "WR",
+    "team": "SF",
+    "opponent_team": "MIA",
+    "projection": 0.17523691058158875,
+    "floor": 0.0,
+    "ceiling": 4.344231128692627
+  },
+  {
+    "rank": 291.0,
+    "player_display_name": "Marvin Harrison Jr.",
+    "position": "WR",
+    "team": "ARI",
+    "opponent_team": "SEA",
+    "projection": 0.15568338334560394,
+    "floor": 0.0,
+    "ceiling": 4.32467794418335
+  },
+  {
+    "rank": 292.0,
+    "player_display_name": "Isaiah Davis",
+    "position": "RB",
+    "team": "NYJ",
+    "opponent_team": "GB",
+    "projection": 0.14611263573169708,
+    "floor": 0.0,
+    "ceiling": 4.3151068687438965
+  },
+  {
+    "rank": 293.0,
+    "player_display_name": "Chris Bell",
+    "position": "WR",
+    "team": "MIA",
+    "opponent_team": "SF",
+    "projection": 0.14539067447185516,
+    "floor": 0.0,
+    "ceiling": 4.314384937286377
+  },
+  {
+    "rank": 294.0,
+    "player_display_name": "Jaylin Lane",
+    "position": "WR",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 0.123268723487854,
+    "floor": 0.0,
+    "ceiling": 4.292263031005859
+  },
+  {
+    "rank": 295.0,
+    "player_display_name": "Malik Benson",
+    "position": "WR",
+    "team": "LV",
+    "opponent_team": "LAC",
+    "projection": 0.11973299831151962,
+    "floor": 0.0,
+    "ceiling": 4.288727283477783
+  },
+  {
+    "rank": 296.0,
+    "player_display_name": "Kimani Vidal",
+    "position": "RB",
+    "team": "LAC",
+    "opponent_team": "LV",
+    "projection": 0.11751457303762436,
+    "floor": 0.0,
+    "ceiling": 4.286509037017822
+  },
+  {
+    "rank": 297.0,
+    "player_display_name": "Brevyn Spann-Ford",
+    "position": "TE",
+    "team": "DAL",
+    "opponent_team": "WAS",
+    "projection": 0.10195700079202652,
+    "floor": 0.0,
+    "ceiling": 4.270951271057129
+  },
+  {
+    "rank": 298.0,
+    "player_display_name": "Dohnte Meyers",
+    "position": "WR",
+    "team": "CIN",
+    "opponent_team": "HOU",
+    "projection": 0.09947902709245682,
+    "floor": 0.0,
+    "ceiling": 4.2684736251831055
+  },
+  {
+    "rank": 299.0,
+    "player_display_name": "Jaleel McLaughlin",
+    "position": "RB",
+    "team": "CLE",
+    "opponent_team": "TB",
+    "projection": 0.09751693904399872,
+    "floor": 0.0,
+    "ceiling": 4.2665114402771
+  },
+  {
+    "rank": 300.0,
+    "player_display_name": "Brycen Tremayne",
+    "position": "WR",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 0.09140074998140335,
+    "floor": 0.0,
+    "ceiling": 4.260395050048828
+  },
+  {
+    "rank": 301.0,
+    "player_display_name": "Xavier Smith",
+    "position": "WR",
+    "team": "LA",
+    "opponent_team": "NYG",
+    "projection": 0.08187059313058853,
+    "floor": 0.0,
+    "ceiling": 4.2508649826049805
+  },
+  {
+    "rank": 302.0,
+    "player_display_name": "Nikko Remigio",
+    "position": "WR",
+    "team": "KC",
+    "opponent_team": "IND",
+    "projection": 0.07814871519804001,
+    "floor": 0.0,
+    "ceiling": 4.247143268585205
+  },
+  {
+    "rank": 303.0,
+    "player_display_name": "Braxton Berrios",
+    "position": "WR",
+    "team": "NYG",
+    "opponent_team": "LA",
+    "projection": 0.07251899689435959,
+    "floor": 0.0,
+    "ceiling": 4.241513252258301
+  },
+  {
+    "rank": 304.0,
+    "player_display_name": "Britain Covey",
+    "position": "WR",
+    "team": "PHI",
+    "opponent_team": "TEN",
+    "projection": 0.07077860832214355,
+    "floor": 0.0,
+    "ceiling": 4.239772796630859
+  },
+  {
+    "rank": 305.0,
+    "player_display_name": "Daniel Bellinger",
+    "position": "TE",
+    "team": "TEN",
+    "opponent_team": "PHI",
+    "projection": 0.06989219784736633,
+    "floor": 0.0,
+    "ceiling": 4.238886833190918
+  },
+  {
+    "rank": 306.0,
+    "player_display_name": "Barion Brown",
+    "position": "WR",
+    "team": "NO",
+    "opponent_team": "BAL",
+    "projection": 0.06088325381278992,
+    "floor": 0.0,
+    "ceiling": 4.229877471923828
+  },
+  {
+    "rank": 307.0,
+    "player_display_name": "Treylon Burks",
+    "position": "WR",
+    "team": "WAS",
+    "opponent_team": "DAL",
+    "projection": 0.05384138599038124,
+    "floor": 0.0,
+    "ceiling": 4.222836017608643
+  },
+  {
+    "rank": 308.0,
+    "player_display_name": "Devin Duvernay",
+    "position": "WR",
+    "team": "ARI",
+    "opponent_team": "SEA",
+    "projection": 0.05234738811850548,
+    "floor": 0.0,
+    "ceiling": 4.221341609954834
+  },
+  {
+    "rank": 308.0,
+    "player_display_name": "Jalen Brooks",
+    "position": "WR",
+    "team": "ARI",
+    "opponent_team": "SEA",
+    "projection": 0.05234738811850548,
+    "floor": 0.0,
+    "ceiling": 4.221341609954834
+  },
+  {
+    "rank": 310.0,
+    "player_display_name": "Kameron Johnson",
+    "position": "WR",
+    "team": "TB",
+    "opponent_team": "CLE",
+    "projection": 0.05224088206887245,
+    "floor": 0.0,
+    "ceiling": 4.221235275268555
+  },
+  {
+    "rank": 310.0,
+    "player_display_name": "Kaden Wetjen",
+    "position": "WR",
+    "team": "PIT",
+    "opponent_team": "NE",
+    "projection": 0.05224088206887245,
+    "floor": 0.0,
+    "ceiling": 4.221235275268555
+  },
+  {
+    "rank": 312.0,
+    "player_display_name": "Rasheen Ali",
+    "position": "RB",
+    "team": "BAL",
+    "opponent_team": "NO",
+    "projection": 0.04856341332197189,
+    "floor": 0.0,
+    "ceiling": 4.217557907104492
+  },
+  {
+    "rank": 313.0,
+    "player_display_name": "Tay Martin",
+    "position": "WR",
+    "team": "DET",
+    "opponent_team": "BUF",
+    "projection": 0.04767540469765663,
+    "floor": 0.0,
+    "ceiling": 4.216670036315918
+  },
+  {
+    "rank": 314.0,
+    "player_display_name": "Bo Melton",
+    "position": "WR",
+    "team": "GB",
+    "opponent_team": "NYJ",
+    "projection": 0.044633958488702774,
+    "floor": 0.0,
+    "ceiling": 4.21362829208374
+  },
+  {
+    "rank": 315.0,
+    "player_display_name": "Keleki Latu",
+    "position": "TE",
+    "team": "BUF",
+    "opponent_team": "DET",
+    "projection": 0.044272396713495255,
+    "floor": 0.0,
+    "ceiling": 4.213266849517822
+  },
+  {
+    "rank": 316.0,
+    "player_display_name": "Tyrone Tracy Jr.",
+    "position": "RB",
+    "team": "NYG",
+    "opponent_team": "LA",
+    "projection": 0.0442705936729908,
+    "floor": 0.0,
+    "ceiling": 4.2132649421691895
+  },
+  {
+    "rank": 317.0,
+    "player_display_name": "Dylan Laube",
+    "position": "RB",
+    "team": "LV",
+    "opponent_team": "LAC",
+    "projection": 0.04324870556592941,
+    "floor": 0.0,
+    "ceiling": 4.21224308013916
+  },
+  {
+    "rank": 318.0,
+    "player_display_name": "Jacob Saylors",
+    "position": "RB",
+    "team": "DET",
+    "opponent_team": "BUF",
+    "projection": 0.041872382164001465,
+    "floor": 0.0,
+    "ceiling": 4.210866928100586
+  },
+  {
+    "rank": 319.0,
+    "player_display_name": "Greg Dortch",
+    "position": "WR",
+    "team": "BUF",
+    "opponent_team": "DET",
+    "projection": 0.03597841411828995,
+    "floor": 0.0,
+    "ceiling": 4.204972743988037
+  },
+  {
+    "rank": 320.0,
+    "player_display_name": "Eli Heidenreich",
+    "position": "RB",
+    "team": "PIT",
+    "opponent_team": "NE",
+    "projection": 0.033893391489982605,
+    "floor": 0.0,
+    "ceiling": 4.202888011932373
+  },
+  {
+    "rank": 321.0,
+    "player_display_name": "Tom Kennedy",
+    "position": "WR",
+    "team": "DET",
+    "opponent_team": "BUF",
+    "projection": 0.03300539031624794,
+    "floor": 0.0,
+    "ceiling": 4.201999664306641
+  },
+  {
+    "rank": 322.0,
+    "player_display_name": "Arian Smith",
+    "position": "WR",
+    "team": "NYJ",
+    "opponent_team": "GB",
+    "projection": 0.028617629781365395,
+    "floor": 0.0,
+    "ceiling": 4.197612285614014
+  },
+  {
+    "rank": 323.0,
+    "player_display_name": "Brayden Willis",
+    "position": "TE",
+    "team": "SF",
+    "opponent_team": "MIA",
+    "projection": 0.027187885716557503,
+    "floor": 0.0,
+    "ceiling": 4.1961822509765625
+  },
+  {
+    "rank": 323.0,
+    "player_display_name": "Cameron Latu",
+    "position": "TE",
+    "team": "NE",
+    "opponent_team": "PIT",
+    "projection": 0.027187885716557503,
+    "floor": 0.0,
+    "ceiling": 4.1961822509765625
+  },
+  {
+    "rank": 325.0,
+    "player_display_name": "Julius Chestnut",
+    "position": "RB",
+    "team": "TEN",
+    "opponent_team": "PHI",
+    "projection": 0.02294258028268814,
+    "floor": 0.0,
+    "ceiling": 4.19193696975708
+  },
+  {
+    "rank": 326.0,
+    "player_display_name": "Derius Davis",
+    "position": "WR",
+    "team": "LAC",
+    "opponent_team": "LV",
+    "projection": 0.022497158497571945,
+    "floor": 0.0,
+    "ceiling": 4.191491603851318
+  },
+  {
+    "rank": 327.0,
+    "player_display_name": "Andrew Ogletree",
+    "position": "TE",
+    "team": "IND",
+    "opponent_team": "KC",
+    "projection": 0.022272592410445213,
+    "floor": 0.0,
+    "ceiling": 4.191267013549805
+  },
+  {
+    "rank": 328.0,
+    "player_display_name": "Hunter Long",
+    "position": "TE",
+    "team": "ARI",
+    "opponent_team": "SEA",
+    "projection": 0.022229013964533806,
+    "floor": 0.0,
+    "ceiling": 4.191223621368408
+  },
+  {
+    "rank": 329.0,
+    "player_display_name": "Anthony Gould",
+    "position": "WR",
+    "team": "IND",
+    "opponent_team": "KC",
+    "projection": 0.019180092960596085,
+    "floor": 0.0,
+    "ceiling": 4.188174724578857
+  },
+  {
+    "rank": 330.0,
+    "player_display_name": "Feleipe Franks",
+    "position": "TE",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 0.012265750207006931,
+    "floor": 0.0,
+    "ceiling": 4.181260108947754
+  },
+  {
+    "rank": 331.0,
+    "player_display_name": "Charlie Woerner",
+    "position": "TE",
+    "team": "ATL",
+    "opponent_team": "CAR",
+    "projection": 0.005867355037480593,
+    "floor": 0.0,
+    "ceiling": 4.174861907958984
+  },
+  {
+    "rank": 332.0,
+    "player_display_name": "Malachi Corley",
+    "position": "WR",
+    "team": "CLE",
+    "opponent_team": "TB",
+    "projection": 0.00041085126576945186,
+    "floor": 0.0,
+    "ceiling": 4.169405460357666
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "Noah Gray",
+    "position": "TE",
+    "team": "KC",
+    "opponent_team": "IND",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "Elijah Higgins",
+    "position": "TE",
+    "team": "ARI",
+    "opponent_team": "SEA",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "John Metchie III",
+    "position": "WR",
+    "team": "CAR",
+    "opponent_team": "ATL",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "Ray Davis",
+    "position": "RB",
+    "team": "BUF",
+    "opponent_team": "DET",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "Noah Fant",
+    "position": "TE",
+    "team": "NO",
+    "opponent_team": "BAL",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "Myles Price",
+    "position": "WR",
+    "team": "MIN",
+    "opponent_team": "CHI",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "Lil'Jordan Humphrey",
+    "position": "WR",
+    "team": "DEN",
+    "opponent_team": "JAX",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "British Brooks",
+    "position": "RB",
+    "team": "HOU",
+    "opponent_team": "CIN",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "Jerry Jeudy",
+    "position": "WR",
+    "team": "CLE",
+    "opponent_team": "TB",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "LeQuint Allen Jr.",
+    "position": "RB",
+    "team": "JAX",
+    "opponent_team": "DEN",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "Brock Wright",
+    "position": "TE",
+    "team": "DET",
+    "opponent_team": "BUF",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "Chimere Dike",
+    "position": "WR",
+    "team": "TEN",
+    "opponent_team": "PHI",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  },
+  {
+    "rank": 333.0,
+    "player_display_name": "Brashard Smith",
+    "position": "RB",
+    "team": "KC",
+    "opponent_team": "IND",
+    "projection": 0.0,
+    "floor": 0.0,
+    "ceiling": 4.168994426727295
+  }
+]
