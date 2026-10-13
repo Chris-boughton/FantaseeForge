@@ -1,0 +1,78 @@
+
+name: Update Fantasy Predictions
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fantasy-predictions
+  cancel-in-progress: false
+
+jobs:
+  update-predictions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run full prediction pipeline
+        run: |
+          python python/pipeline/run_pipeline.py --full-refresh
+
+      - name: Validate published predictions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("website/data/predictions.json")
+
+          if not path.exists():
+              raise RuntimeError("Prediction JSON missing.")
+
+          data = json.loads(path.read_text(encoding="utf-8"))
+
+          predictions = data.get("predictions", [])
+
+          assert predictions, "No predictions generated."
+          assert data["player_count"] == len(predictions)
+          assert isinstance(data["season"], int)
+          assert isinstance(data["week"], int)
+
+          print(
+              f"Validated {len(predictions)} predictions "
+              f"for {data['season']} Week {data['week']}"
+          )
+          PY
+
+      - name: Commit updated predictions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add website/data/predictions.json
+
+          if git diff --cached --quiet; then
+            echo "No prediction changes to commit."
+          else
+            git commit -m "Update weekly fantasy predictions"
+            git push
+          fi
