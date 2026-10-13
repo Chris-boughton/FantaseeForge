@@ -17,29 +17,40 @@ jobs:
     timeout-minutes: 60
 
     steps:
+      # 1. Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          ref: main
 
+      # 2. Set up Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
 
+      # 3. Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
-      # TEMPORARY: Test the pipeline's skip handling.
-      # Restore --full-refresh after this test succeeds.
+      # 4. Run prediction pipeline
+      # TEMPORARY TEST:
+      # Replace --test-skip with --full-refresh after testing.
       - name: Run prediction pipeline
         id: pipeline
         run: |
           python python/pipeline/run_pipeline.py --test-skip
 
+      # 5. Display pipeline status
+      - name: Display pipeline status
+        run: |
+          echo "Pipeline status: ${{ steps.pipeline.outputs.status }}"
+
+      # 6. Validate predictions only if newly published
       - name: Validate published predictions
         if: steps.pipeline.outputs.status == 'published'
         run: |
@@ -55,10 +66,17 @@ jobs:
           data = json.loads(path.read_text(encoding="utf-8"))
           predictions = data.get("predictions", [])
 
-          assert predictions, "No predictions generated."
-          assert data["player_count"] == len(predictions)
-          assert isinstance(data["season"], int)
-          assert isinstance(data["week"], int)
+          if not predictions:
+              raise RuntimeError("No predictions generated.")
+
+          if data.get("player_count") != len(predictions):
+              raise RuntimeError("Player count mismatch.")
+
+          if not isinstance(data.get("season"), int):
+              raise RuntimeError("Invalid season.")
+
+          if not isinstance(data.get("week"), int):
+              raise RuntimeError("Invalid week.")
 
           print(
               f"Validated {len(predictions)} predictions "
@@ -66,6 +84,7 @@ jobs:
           )
           PY
 
+      # 7. Commit predictions only if newly published
       - name: Commit updated predictions
         if: steps.pipeline.outputs.status == 'published'
         run: |
@@ -78,5 +97,19 @@ jobs:
             echo "No prediction changes to commit."
           else
             git commit -m "Update weekly fantasy predictions"
-            git push
+
+            # Synchronize with remote changes.
+            git fetch origin main
+            git rebase origin/main
+
+            # Push without overwriting remote history.
+            git push origin HEAD:main
           fi
+
+      # 8. Confirm skipped updates
+      - name: Confirm skipped update
+        if: steps.pipeline.outputs.status == 'skipped'
+        run: |
+          echo "NFL data not ready or skip test activated."
+          echo "Existing website predictions remain unchanged."
+          echo "No prediction commit was attempted."
