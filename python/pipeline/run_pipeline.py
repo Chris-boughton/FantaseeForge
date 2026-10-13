@@ -1,9 +1,18 @@
 
 from pathlib import Path
+from datetime import date
+import argparse
+import os
 import subprocess
 import sys
+
 import duckdb
-import argparse
+
+
+class DataNotReadyError(Exception):
+    """Expected condition: NFL data is not ready for publication."""
+    pass
+
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -14,6 +23,29 @@ SQL_FILES = [
     "sql/features/upcoming_player_features.sql",
 ]
 
+
+def report_pipeline_status(status):
+    """
+    Report pipeline outcome to GitHub Actions.
+
+    Valid statuses:
+        published - New predictions were generated.
+        skipped   - NFL data was not ready.
+
+    Also works locally, where GITHUB_OUTPUT is not defined.
+    """
+    if status not in {"published", "skipped"}:
+        raise ValueError(f"Invalid pipeline status: {status}")
+
+    print(f"\nPipeline status: {status}", flush=True)
+
+    github_output = os.environ.get("GITHUB_OUTPUT")
+
+    if github_output:
+        with open(github_output, "a", encoding="utf-8") as output:
+            output.write(f"status={status}\n")
+
+
 def run_script(relative_path):
     print(f"\n=== Running {relative_path} ===", flush=True)
 
@@ -22,6 +54,7 @@ def run_script(relative_path):
         cwd=ROOT,
         check=True,
     )
+
 
 def validate_training_data():
     print("\n=== Validating historical game completeness ===")
@@ -89,18 +122,20 @@ def validate_training_data():
 
         if scheduled == 0:
             raise RuntimeError(
-                "No previous-week schedule found."
+                "No previous-week schedule found. "
+                "Check the NFL schedules table and prediction-week selection."
             )
 
         if scored != scheduled:
-            raise RuntimeError(
-                "Previous NFL week is not fully completed."
+            raise DataNotReadyError(
+                f"Previous NFL week is incomplete: "
+                f"{scored}/{scheduled} games have scores."
             )
 
         if with_stats != scheduled:
-            raise RuntimeError(
-                "Player statistics are missing for "
-                "one or more completed games."
+            raise DataNotReadyError(
+                f"Player statistics are incomplete: "
+                f"{with_stats}/{scheduled} games have player statistics."
             )
 
         print("Historical game completeness validation passed.")
@@ -142,15 +177,20 @@ def validate_prediction_week():
             )
 
         if scored > 0:
-            raise RuntimeError(
+            raise DataNotReadyError(
                 "Prediction week has already started. "
-                "Refusing to regenerate weekly predictions."
+                "Skipping weekly prediction update."
             )
 
-        if first_date is None or first_date <= __import__("datetime").date.today():
+        if first_date is None:
             raise RuntimeError(
+                "Prediction week has no valid start date."
+            )
+
+        if first_date <= date.today():
+            raise DataNotReadyError(
                 "Prediction week begins today or has already begun. "
-                "Refusing to regenerate predictions."
+                "Skipping weekly prediction update."
             )
 
         print("Prediction week validation passed.")
@@ -168,6 +208,7 @@ def select_prediction_week():
 
     try:
         con.execute("BEGIN TRANSACTION")
+
         con.execute(path.read_text(encoding="utf-8"))
 
         result = con.execute("""
@@ -176,8 +217,8 @@ def select_prediction_week():
         """).fetchone()
 
         if result is None:
-            raise RuntimeError(
-                "No upcoming NFL prediction week found."
+            raise DataNotReadyError(
+                "No future NFL prediction week is currently available."
             )
 
         season, week, first_game_date = result
@@ -195,6 +236,7 @@ def select_prediction_week():
 
     finally:
         con.close()
+
 
 def run_sql_pipeline():
     print("\n=== Building upcoming prediction features ===")
@@ -255,7 +297,7 @@ def run_predictions():
     subprocess.run(
         [
             sys.executable,
-            str(ROOT / "python" / "models" / "predict.py")
+            str(ROOT / "python" / "models" / "predict.py"),
         ],
         cwd=ROOT,
         check=True,
@@ -264,14 +306,27 @@ def run_predictions():
 
 def main():
     parser = argparse.ArgumentParser()
+
     parser.add_argument(
         "--full-refresh",
         action="store_true",
         help="Download, load, rebuild and retrain before predicting.",
     )
+
+    parser.add_argument(
+        "--test-skip",
+        action="store_true",
+        help="Test skip handling without modifying predictions or database.",
+    )
+
     args = parser.parse_args()
 
     print("=== Fantasee Forge Prediction Pipeline ===")
+
+    if args.test_skip:
+        raise DataNotReadyError(
+            "Simulated incomplete NFL data for testing."
+        )
 
     if args.full_refresh:
         run_script("python/ingest/download_data.py")
@@ -281,15 +336,27 @@ def main():
     select_prediction_week()
     validate_training_data()
     validate_prediction_week()
+
     run_sql_pipeline()
-    
+
     if args.full_refresh:
         run_script("python/models/train_production.py")
 
     run_predictions()
 
+    report_pipeline_status("published")
+
     print("\n=== Pipeline completed successfully ===")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+
+    except DataNotReadyError as exc:
+        print(f"\nSKIPPED: {exc}")
+        print("Existing website predictions have not been changed.")
+
+        report_pipeline_status("skipped")
+
+        raise SystemExit(0)
