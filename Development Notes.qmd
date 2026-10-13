@@ -1,0 +1,830 @@
+---
+title: "Fantasee Forge"
+subtitle: "Model Development Log"
+author: "Chris Boughton"
+date: last-modified
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    smooth-scroll: true
+    html-math-method: katex
+    number-sections: false
+    css: styles.css
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Overview
+
+This is a running development log for the Fantasee Forge prediction model.
+
+The idea behind Fantasee Forge is fairly simple: take historical NFL data, turn it into useful player-level features, train a model to predict fantasy production, and eventually use those predictions to power the website.
+
+I'm deliberately documenting the process as I build it rather than only recording the final model. There are quite a few decisions involved in getting from raw NFL data to a prediction, and I want to be able to look back and understand **why something was done**, not just what the final code happens to do.
+
+The current modelling pipeline looks roughly like this:
+
+<div style="text-align:center; margin: 2rem 0;">
+
+**NFL data → raw files → DuckDB → staging → features → training data → model → evaluation**
+
+</div>
+
+The website itself comes later. For now, the priority is getting a model that can be tested properly and understanding where its predictions are coming from.
+
+# Setup
+
+The project is being developed on Windows using PowerShell, Python, SQL and DuckDB. Python work is being done inside the project's `.venv` virtual environment.
+
+The project lives at:
+
+`C:\Users\bough\Projects\FantaseeForge`
+
+The initial project structure was set up around separate areas for data, SQL, Python, models and eventually the website. The main database is:
+
+`database/fantasee_forge.duckdb`
+
+I also set up Git/GitHub early because I want the project to be reproducible and to have a proper history of changes rather than ending up with a collection of scripts that only work on my machine.
+
+# Data
+
+The first stage was getting NFL data into the project in a form that could be reused without downloading everything every time.
+
+The initial ingestion work was handled through **`python/ingest/download_data.py`**. This uses `nflreadpy` to obtain the relevant nflverse data and saves the downloaded datasets as Parquet files under the project's raw-data directory.
+
+The important part of this setup is the caching behaviour. Once a dataset has been downloaded, the pipeline checks whether the corresponding local file already exists and reuses it rather than downloading it again.
+
+That matters for two reasons. Firstly, it makes development much quicker. Secondly, it means I can repeatedly rebuild the DuckDB tables without repeatedly hitting the source data.
+
+The initial raw data collection included the player statistics, schedules, rosters and snap-count information needed for the modelling work.
+
+# Database
+
+Once the raw data was available, the next step was getting it into DuckDB.
+
+The database was built as a small analytical warehouse rather than trying to do all the transformation work directly in Python. The intention is to keep the data pipeline reasonably transparent:
+
+**raw data → staging → features → model-ready data**.
+
+This also means I can inspect intermediate tables directly in DuckDB, which has been particularly useful while developing the model.
+
+The main staging tables eventually became:
+
+| Table                  | Purpose                                             |
+| ---------------------- | --------------------------------------------------- |
+| `staging.player_game`  | Player-level game statistics and PPR fantasy points |
+| `staging.snap_usage`   | Offensive and defensive snap counts/share           |
+| `staging.team_passing` | Team passing attempts by game                       |
+
+One of the first lessons here was not to assume that the database looked exactly like the original plan.
+
+# Player Data
+
+I checked the structure of `staging.player_game` with DuckDB's `DESCRIBE` command.
+
+The table contains the player-level statistics needed for the first model, including:
+
+* player and game identifiers
+* season and week
+* team and opponent
+* passing statistics
+* rushing statistics
+* receiving statistics
+* `fantasy_points_ppr`
+
+The last column was particularly useful because it meant the PPR scoring had already been calculated upstream.
+
+There was originally an assumption in the pipeline that a separate `staging.player_game_scored` table would exist. A validation script initially referenced that table, but the actual database did not contain it.
+
+Rather than create another unnecessary table just to match the original plan, I changed the pipeline to use the existing `fantasy_points_ppr` column.
+
+The validation script was updated accordingly in **`python/validation/validate_database.py`**.
+
+The important check here was simply that `staging.player_game` existed and contained rows.
+
+That gave us confidence that the rest of the feature-building process was operating on the actual database structure rather than an assumed one.
+
+# Snap Data
+
+Next I checked `staging.snap_usage`.
+
+The purpose of this table is to give the model information about opportunity that isn't obvious from fantasy points alone.
+
+For example, two players might both score 12 fantasy points, but one could have played almost every offensive snap while the other only played half of them.
+
+The table contains:
+
+* offensive snaps
+* offensive snap percentage
+* defensive snaps
+* defensive snap percentage
+* player/team/game identifiers
+
+The field that became particularly interesting later was `offense_pct`.
+
+At this point I wasn't assuming snap share would improve the model. I was simply making sure the data existed and understanding what was available.
+
+# Team Passing
+
+I also checked `staging.team_passing`.
+
+This table gives the number of passing attempts made by each team in each game.
+
+The reasoning for keeping this separate was that fantasy production doesn't happen in isolation. A receiver's opportunities, for example, are partly dependent on how much the team throws the ball.
+
+Again, this was treated as a feature to test rather than something that was automatically assumed to improve predictions.
+
+# Validation
+
+Before building the model, I wanted a reasonably clean path from the player-game data into a training dataset.
+
+The first validation script was **`python/validation/validate_database.py`**.
+
+Its purpose was deliberately simple: make sure the tables we were relying on actually existed and weren't empty.
+
+This caught the `player_game_scored` issue early.
+
+That might seem like a minor check, but it is exactly the sort of thing that is worth checking before spending time debugging a model that is actually working from the wrong table.
+
+# Rolling Features
+
+With the staging data understood, I created the first feature table:
+
+**`sql/features/player_rolling.sql`**
+
+This created `features.player_rolling`.
+
+The first features were based mainly on recent player performance:
+
+| Feature                   | What it represents                                 |
+| ------------------------- | -------------------------------------------------- |
+| `fantasy_points_avg_l2`   | Average PPR points over the previous 2 games       |
+| `fantasy_points_avg_l4`   | Average PPR points over the previous 4 games       |
+| `fantasy_points_avg_l8`   | Average PPR points over the previous 8 games       |
+| `targets_avg_l4`          | Average targets over the previous 4 games          |
+| `receptions_avg_l4`       | Average receptions over the previous 4 games       |
+| `receiving_yards_avg_l4`  | Average receiving yards over the previous 4 games  |
+| `rushing_attempts_avg_l4` | Average rushing attempts over the previous 4 games |
+| `rushing_yards_avg_l4`    | Average rushing yards over the previous 4 games    |
+
+There was one important detail in the SQL.
+
+The rolling windows deliberately stopped at the **previous** row rather than including the current row.
+
+That was done to avoid leakage.
+
+If I'm trying to predict a player's next game, I can use their previous four games. I can't use the result of the game I'm trying to predict.
+
+This was one of the main principles behind the feature engineering from the beginning.
+
+# Target
+
+Once the historical features existed, I needed to define exactly what the model was supposed to predict.
+
+That was done in:
+
+**`sql/features/model_training.sql`**
+
+The target was created using `LEAD()` over each player's games.
+
+In other words, each row contains information available around one game, and `target_fantasy_points` contains the fantasy points from that player's next recorded game.
+
+I chose the next recorded game rather than simply saying "next calendar week".
+
+That means bye weeks don't need any special handling. If a player plays Week 9 and then Week 11, the Week 9 row points to Week 11 as the next target.
+
+# Target Check
+
+I wanted to check this rather than assume the `LEAD()` was correct.
+
+The check was run against Tom Brady and included the player's season, week, current fantasy points, target fantasy points, target season and target week.
+
+The results showed the expected behaviour.
+
+For example, a Week 9 game pointed to Week 11 rather than Week 10, which demonstrated that bye weeks were being handled naturally.
+
+The check also crossed the season boundary correctly, with a player's final game of one season pointing to their first recorded game of the next season where appropriate.
+
+The final game for a player had a `NULL` target, which is also what we want because there is no future game in the dataset.
+
+This check was important because a target-shifting mistake can make an apparently excellent model completely misleading.
+
+# Clean Data
+
+The next script was:
+
+**`sql/features/model_training_clean.sql`**
+
+This removed rows where there wasn't a usable target or where the required historical features weren't available.
+
+The resulting training table contained:
+
+| Check            | Result |
+| ---------------- | -----: |
+| Rows             | 38,357 |
+| Distinct players |  1,197 |
+| First season     |   2019 |
+| Last season      |   2026 |
+
+The presence of 2026 here isn't a problem. The current season is incomplete, so only a small number of 2026 rows are currently available.
+
+For model evaluation, I would not randomly mix those rows into the historical training/test split.
+
+# Model V1
+
+The first model was deliberately kept fairly simple.
+
+The Python script was:
+
+**`python/models/train.py`**
+
+The model used eight features based on recent player production and opportunity:
+
+* recent fantasy points
+* recent targets
+* recent receptions
+* recent receiving yards
+* recent rushing attempts
+* recent rushing yards
+
+The model itself was an XGBoost regression model.
+
+I used a time-based split rather than a random split. The training data covered:
+
+**2019–2024**
+
+and the test data was:
+
+**2025**
+
+This is much closer to how the model will eventually be used.
+
+If I randomly split the rows, information from later seasons could end up in the training data while earlier seasons are used for testing. That wouldn't represent the real-world problem very well.
+
+# V1 Results
+
+The first model loaded 38,084 usable historical rows.
+
+The split was:
+
+| Dataset  |   Rows |
+| -------- | -----: |
+| Training | 32,412 |
+| Testing  |  5,672 |
+
+The results on the 2025 test season were:
+
+| Metric               |        V1 |
+| -------------------- | --------: |
+| MAE                  | **4.628** |
+| RMSE                 | **6.313** |
+| Spearman correlation | **0.659** |
+
+These numbers became our initial benchmark.
+
+The model was saved as:
+
+**`models/fantasee_forge_xgb.joblib`**
+
+# Baseline
+
+I didn't want to judge the XGBoost model in isolation.
+
+The next script was:
+
+**`python/models/baseline.py`**
+
+The baseline simply used the player's four-game average fantasy points as the prediction.
+
+That gave:
+
+| Metric | Baseline |
+| ------ | -------: |
+| MAE    |    4.767 |
+| RMSE   |    6.681 |
+
+Compared with that, XGBoost produced:
+
+| Metric | Baseline |        V1 |
+| ------ | -------: | --------: |
+| MAE    |    4.767 | **4.628** |
+| RMSE   |    6.681 | **6.313** |
+
+So V1 was doing better than simply saying "this player normally scores around X points".
+
+The improvement wasn't enormous, but it was enough to show that the model was learning something beyond the simple rolling average.
+
+# Positions
+
+I also wanted to avoid hiding everything behind one overall number.
+
+The model was therefore evaluated separately for QB, RB, TE and WR.
+
+The V1 results were:
+
+| Position |  Rows |   MAE |  RMSE |
+| -------- | ----: | ----: | ----: |
+| QB       |   611 | 6.676 | 8.349 |
+| RB       | 1,483 | 4.765 | 6.613 |
+| TE       | 1,210 | 3.793 | 5.309 |
+| WR       | 2,368 | 4.441 | 5.974 |
+
+This is useful because the positions behave differently and have different scoring distributions.
+
+It also gives us something to monitor as new features are introduced.
+
+# Ranking
+
+The other metric I added was Spearman rank correlation.
+
+The reason is that Fantasee Forge isn't ultimately just trying to tell someone:
+
+> "Player X will score 14.7 points."
+
+The site will also need to rank players.
+
+So I wanted a metric that tells me whether the model's ordering of players broadly lines up with the actual ordering.
+
+V1 produced:
+
+**Spearman = 0.659**
+
+I'm treating this as a complementary metric rather than replacing MAE and RMSE with it.
+
+# V2
+
+At this point the basic model was working, but it was still heavily based on historical player production.
+
+The next question was whether we could give it more information about **opportunity**.
+
+This led to V2.
+
+The two additional features were:
+
+| Feature                     | Reason                      |
+| --------------------------- | --------------------------- |
+| `offense_pct_avg_l4`        | Recent offensive snap share |
+| `team_pass_attempts_avg_l4` | Recent team passing volume  |
+
+The idea was that recent fantasy production tells us what happened, while snap share and team passing volume might tell us something about the opportunity behind that production.
+
+# Opportunity
+
+The opportunity features were created in:
+
+**`sql/features/player_opportunity.sql`**
+
+This joined the player-game data to `staging.snap_usage` and `staging.team_passing`.
+
+The rolling features were again calculated using previous games only.
+
+That means the model isn't allowed to see the current game's snap share or passing volume when trying to predict that game's result.
+
+That distinction is important.
+
+Using a player's *previous* snap share is legitimate.
+
+Using the snap share they actually received in the game we're trying to predict would be leakage.
+
+# Coverage
+
+Before using the opportunity data, I checked how complete the snap-count join was.
+
+The query counted total rows, rows with snap data and rows without it.
+
+The result was:
+
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Rows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total rows</td>
+<td>41,046</td>
+</tr>
+<tr>
+<td>Rows with snap data</td>
+<td>41,007</td>
+</tr>
+<tr>
+<td>Rows without snap data</td>
+<td>39</td>
+</tr>
+</tbody>
+</table>
+
+That means roughly **99.9% of the player-game rows had snap data**.
+
+This was important because a feature can look promising in theory but be fairly useless if most of the historical data is missing.
+
+That wasn't the case here.
+
+# V2 Training Data
+
+The combined V2 training table was created with:
+
+**`sql/features/model_training_v2.sql`**
+
+and the cleaned version with:
+
+**`sql/features/model_training_v2_clean.sql`**
+
+I then checked the number of usable rows by season.
+
+The result was:
+
+<table>
+<thead>
+<tr>
+<th>Season</th>
+<th>Rows</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>2019</td><td>4,746</td></tr>
+<tr><td>2020</td><td>5,280</td></tr>
+<tr><td>2021</td><td>5,608</td></tr>
+<tr><td>2022</td><td>5,560</td></tr>
+<tr><td>2023</td><td>5,578</td></tr>
+<tr><td>2024</td><td>5,622</td></tr>
+<tr><td>2025</td><td>5,664</td></tr>
+<tr><td>2026</td><td>272</td></tr>
+</tbody>
+</table>
+
+This was a useful check because there had been a concern that the snap data might only give us good coverage for recent seasons.
+
+It turns out that wasn't a significant problem for this dataset.
+
+# V2 Model
+
+Rather than overwriting V1, I copied the training script and created:
+
+**`python/models/train_v2.py`**
+
+This is important because I want to be able to reproduce and compare different model versions later.
+
+V2 used the original eight features plus:
+
+* `offense_pct_avg_l4`
+* `team_pass_attempts_avg_l4`
+
+The resulting model was saved separately as:
+
+**`models/fantasee_forge_xgb_v2.joblib`**
+
+The same time-based evaluation was kept:
+
+**Training: 2019–2024**
+
+**Testing: 2025**
+
+Keeping the test period the same makes the comparison between V1 and V2 much more useful.
+
+# V2 Results
+
+V2 loaded 38,058 historical rows.
+
+After the required fields were checked, all 38,058 remained usable.
+
+The split was:
+
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Rows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training</td>
+<td>32,394</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>5,664</td>
+</tr>
+</tbody>
+</table>
+
+The overall results were:
+
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>V1</th>
+<th>V2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAE</td>
+<td>4.628</td>
+<td>4.629</td>
+</tr>
+<tr>
+<td>RMSE</td>
+<td>6.313</td>
+<td>6.305</td>
+</tr>
+<tr>
+<td>Spearman</td>
+<td>0.659</td>
+<td>0.664</td>
+</tr>
+</tbody>
+</table>
+
+So V2 hasn't suddenly transformed the model.
+
+MAE is effectively unchanged.
+
+RMSE is slightly lower.
+
+Spearman has moved from 0.659 to 0.664.
+
+I'm therefore treating V2 as an experiment rather than claiming that it is definitively better.
+
+The differences are small enough that the next step should be investigation rather than immediately adding another ten features.
+
+# V2 Positions
+
+The V2 position results were:
+
+<table>
+<thead>
+<tr>
+<th>Position</th>
+<th>Rows</th>
+<th>MAE</th>
+<th>RMSE</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>QB</td><td>611</td><td>6.699</td><td>8.363</td></tr>
+<tr><td>RB</td><td>1,483</td><td>4.784</td><td>6.622</td></tr>
+<tr><td>TE</td><td>1,210</td><td>3.805</td><td>5.296</td></tr>
+<tr><td>WR</td><td>2,360</td><td>4.417</td><td>5.947</td></tr>
+</tbody>
+</table>
+
+Compared with V1, the changes are small.
+
+WR improved slightly, TE's RMSE improved slightly, while QB and RB moved slightly in the other direction.
+
+Again, this doesn't look like enough of a change to make a big claim about the new features.
+
+# Importance
+
+The next thing I wanted to understand was what the V2 model was actually paying attention to.
+
+The script for this was:
+
+**`python/models/feature_importance_v2.py`**
+
+The resulting feature importance was:
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Importance</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><code>fantasy_points_avg_l8</code></td><td>0.5804</td></tr>
+<tr><td><code>fantasy_points_avg_l4</code></td><td>0.1609</td></tr>
+<tr><td><code>fantasy_points_avg_l2</code></td><td>0.0636</td></tr>
+<tr><td><code>offense_pct_avg_l4</code></td><td>0.0503</td></tr>
+<tr><td><code>rushing_attempts_avg_l4</code></td><td>0.0293</td></tr>
+<tr><td><code>rushing_yards_avg_l4</code></td><td>0.0270</td></tr>
+<tr><td><code>targets_avg_l4</code></td><td>0.0267</td></tr>
+<tr><td><code>receiving_yards_avg_l4</code></td><td>0.0234</td></tr>
+<tr><td><code>team_pass_attempts_avg_l4</code></td><td>0.0196</td></tr>
+<tr><td><code>receptions_avg_l4</code></td><td>0.0189</td></tr>
+</tbody>
+</table>
+
+This is probably the most interesting result so far.
+
+The model is heavily driven by recent fantasy production.
+
+In particular, `fantasy_points_avg_l8` accounts for 0.5804 of the model's built-in feature importance.
+
+The next two fantasy-performance features are also near the top.
+
+Taken together:
+
+`fantasy_points_avg_l8 + fantasy_points_avg_l4 + fantasy_points_avg_l2`
+
+account for approximately **80.5%** of the reported feature importance.
+
+That tells me that, at the moment, Fantasee Forge is primarily learning:
+
+> **"How has this player been performing recently?"**
+
+rather than:
+
+> **"What is the opportunity and matchup around this player?"**
+
+That's actually a useful finding.
+
+It gives us a much clearer idea of what the model currently is.
+
+# What Changed
+
+The development process so far can be summarised like this:
+
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Script / SQL</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>python/ingest/download_data.py</code></td>
+<td>Download and cache nflverse data</td>
+</tr>
+<tr>
+<td>2</td>
+<td>DuckDB staging scripts</td>
+<td>Build the initial analytical tables</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>python/validation/validate_database.py</code></td>
+<td>Check the expected staging data exists</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>sql/features/player_rolling.sql</code></td>
+<td>Create historical player-performance features</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>sql/features/model_training.sql</code></td>
+<td>Create the next-game target</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Target validation queries</td>
+<td>Check the target doesn't leak or skip incorrectly</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>sql/features/model_training_clean.sql</code></td>
+<td>Remove unusable training rows</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>python/models/train.py</code></td>
+<td>Train the first XGBoost model</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>python/models/baseline.py</code></td>
+<td>Compare against a simple rolling-average prediction</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Position/ranking evaluation</td>
+<td>Check performance beyond one overall metric</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>sql/features/player_opportunity.sql</code></td>
+<td>Add snap share and team passing context</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Opportunity coverage query</td>
+<td>Check how much data was available</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>sql/features/model_training_v2.sql</code></td>
+<td>Combine V1 features with opportunity features</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>sql/features/model_training_v2_clean.sql</code></td>
+<td>Create the clean V2 dataset</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Season coverage query</td>
+<td>Check that V2 didn't remove large amounts of history</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>python/models/train_v2.py</code></td>
+<td>Train the second model</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>python/models/feature_importance_v2.py</code></td>
+<td>Understand which features the model is using</td>
+</tr>
+</tbody>
+</table>
+
+This sequence is important because each stage has been checked before moving on.
+
+# Current Picture
+
+At the moment, the model is in a reasonably useful experimental state.
+
+We have a reproducible data path from nflverse into DuckDB, a set of leakage-conscious historical features, a clearly defined next-game target, a time-based train/test split, a simple baseline, position-level evaluation, rank correlation and two versions of the XGBoost model.
+
+The biggest result so far isn't actually that V2 is slightly better than V1.
+
+It's that we now know where the model is getting most of its signal.
+
+Recent player fantasy production dominates the current model, particularly the eight-game average.
+
+The opportunity features are being used, with offensive snap share having noticeably more importance than team passing volume, but adding them has not yet produced a large change in the 2025 test results.
+
+That gives us a much better starting point for the next stage.
+
+# Next
+
+I don't want to just keep adding features and hoping the numbers improve.
+
+The next experiment should be a controlled **ablation test**.
+
+The idea is to compare:
+
+| Model | Features                                   |
+| ----- | ------------------------------------------ |
+| V1    | Original player-history features           |
+| V2    | Player history + snap share + team passing |
+| V2a   | Player history + snap share                |
+| V2b   | Player history + team passing              |
+
+All four should use the same training period, the same 2025 test period and the same evaluation metrics.
+
+That should tell us whether the new opportunity variables are actually adding useful information, and if so, which one is doing it.
+
+Only after that would I start adding more complicated things such as defensive matchup information.
+
+The aim is to build the model in a way where I can explain **why each feature exists and whether it actually helps**, rather than ending up with a large collection of variables that happen to produce a good-looking number on one test.
+
+# Summary
+
+The project has moved from raw NFL data to a functioning first prediction model.
+
+The current benchmark is:
+
+<div style="display:flex; gap:1rem; flex-wrap:wrap; margin:1.5rem 0;">
+
+<div style="padding:1rem 1.5rem; border:1px solid #ddd; border-radius:8px;">
+<strong>V1 MAE</strong><br>
+4.628
+</div>
+
+<div style="padding:1rem 1.5rem; border:1px solid #ddd; border-radius:8px;">
+<strong>V2 MAE</strong><br>
+4.629
+</div>
+
+<div style="padding:1rem 1.5rem; border:1px solid #ddd; border-radius:8px;">
+<strong>V1 RMSE</strong><br>
+6.313
+</div>
+
+<div style="padding:1rem 1.5rem; border:1px solid #ddd; border-radius:8px;">
+<strong>V2 RMSE</strong><br>
+6.305
+</div>
+
+<div style="padding:1rem 1.5rem; border:1px solid #ddd; border-radius:8px;">
+<strong>V2 Spearman</strong><br>
+0.664
+</div>
+
+</div>
+
+The model isn't finished, and these numbers shouldn't be treated as a final measure of how good Fantasee Forge will eventually be.
+
+## What we have at the moment is more useful than that: a working pipeline, a defensible initial test, and enough information to start making the next improvements based on evidence rather than guesswork.
+
+### Development note
+
+This document should be treated as a **living Quarto document**. As the model develops, the next sections can be added underneath this point rather than rewriting the history each time.
+
+That way the final project will contain a record of how the model went from the initial baseline through opportunity features, matchup features, backtesting and eventually the production model used by the website.

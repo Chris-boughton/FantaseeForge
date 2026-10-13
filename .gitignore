@@ -25,3 +25,25 @@ Thumbs.db
 
 # IDE
 .vscode/
+
+# nflreadpy cache
+.nflreadpy-cache/
+
+# Local database and backups
+database/*.duckdb
+database/*.duckdb.wal
+backups/
+
+# Downloaded NFL datasets
+data/raw/
+
+# Generated model artifacts
+models/*.joblib
+
+# Local analysis exports
+data/exports/
+
+# Quarto-generated output
+Development Notes.html
+Development Notes_files/
+.quarto/

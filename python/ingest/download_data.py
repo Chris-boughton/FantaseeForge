@@ -36,6 +36,9 @@ def download_seasonal_dataset(loader, directory_name, filename_prefix, seasons):
         )
 
 def main():
+
+    nfl.clear_cache()
+    
     seasons = list(range(2019, nfl.get_current_season() + 1))
     
     print(f"Downloading seasons: {seasons}")

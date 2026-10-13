@@ -1,41 +1,51 @@
 from pathlib import Path
-
 import duckdb
 
 ROOT = Path(__file__).resolve().parents[2]
-
 DATABASE = ROOT / "database" / "fantasee_forge.duckdb"
 SQL_DIR = ROOT / "sql"
 
-con = duckdb.connect(str(DATABASE))
+SQL_FILES = [
+    "staging/player_game.sql",
+    "features/player_rolling.sql",
+    "features/player_opportunity.sql",
+    "features/model_training.sql",
+    "features/model_training_clean.sql",
+    "features/model_training_v2.sql",
+    "features/model_training_v2_clean.sql",
+    "features/defense_matchup_v3.sql",
+    "features/model_training_v3.sql",
+]
 
-def run_sql_file(path):
-    """Read and execute a SQL file."""
-    
-    print(f"Running SQL: {path}")
-    
-    sql = path.read_text(encoding="utf-8")
-    
-    con.execute(sql)
 
-print("Creating schemas...")
+def main():
+    con = duckdb.connect(str(DATABASE))
 
-con.execute("""
-    CREATE SCHEMA IF NOT EXISTS raw;
-    CREATE SCHEMA IF NOT EXISTS staging;
-    CREATE SCHEMA IF NOT EXISTS features;
-    CREATE SCHEMA IF NOT EXISTS marts;
-""")
+    try:
+        con.execute("BEGIN TRANSACTION")
 
-for sql_file in sorted((SQL_DIR / "staging").glob("*.sql")):
-    run_sql_file(sql_file)
+        for schema in ["raw", "staging", "features", "marts"]:
+            con.execute(f"CREATE SCHEMA IF NOT EXISTS {schema}")
 
-for sql_file in sorted((SQL_DIR / "features").glob("*.sql")):
-    run_sql_file(sql_file)
+        for filename in SQL_FILES:
+            path = SQL_DIR / filename
 
-for sql_file in sorted((SQL_DIR / "marts").glob("*.sql")):
-    run_sql_file(sql_file)
+            if not path.exists():
+                raise FileNotFoundError(path)
 
-con.close()
+            print(f"Running: {filename}")
+            con.execute(path.read_text(encoding="utf-8"))
 
-print("Database build complete.")
+        con.execute("COMMIT")
+        print("Database build complete.")
+
+    except Exception:
+        con.execute("ROLLBACK")
+        raise
+
+    finally:
+        con.close()
+
+
+if __name__ == "__main__":
+    main()
