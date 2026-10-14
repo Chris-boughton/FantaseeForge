@@ -37,13 +37,11 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
-      # 4. Run prediction pipeline
-      # TEMPORARY TEST:
-      # Replace --test-skip with --full-refresh after testing.
+     # 4. Test full refresh without publishing predictions
       - name: Run prediction pipeline
         id: pipeline
         run: |
-          python python/pipeline/run_pipeline.py --test-skip
+          python python/pipeline/run_pipeline.py --full-refresh --dry-run
 
       # 5. Display pipeline status
       - name: Display pipeline status
@@ -112,4 +110,12 @@ jobs:
         run: |
           echo "NFL data not ready or skip test activated."
           echo "Existing website predictions remain unchanged."
+          echo "No prediction commit was attempted."
+      
+      # 9. Confirm successful dry run
+      - name: Confirm dry run
+        if: steps.pipeline.outputs.status == 'dry_run'
+        run: |
+          echo "Full refresh and prediction generation completed."
+          echo "No website predictions were published."
           echo "No prediction commit was attempted."
