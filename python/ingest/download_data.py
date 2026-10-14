@@ -56,6 +56,13 @@ def main():
         "rosters",
         seasons,
     )
+
+    download_seasonal_dataset(
+        nfl.load_rosters_weekly,
+        "rosters_weekly",
+        "rosters_weekly",
+        seasons,
+    )
     
     download_seasonal_dataset(
         nfl.load_snap_counts,

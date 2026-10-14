@@ -5,10 +5,10 @@ ROOT = Path(__file__).resolve().parents[2]
 
 DATABASE = ROOT / "database" / "fantasee_forge.duckdb"
 RAW_DIR = ROOT / "data" / "raw"
-
 DATASETS = {
     "player_stats": "player_stats/player_stats_*.parquet",
     "rosters": "rosters/rosters_*.parquet",
+    "rosters_weekly": "rosters_weekly/rosters_weekly_*.parquet",
     "snap_counts": "snap_counts/snap_counts_*.parquet",
     "injuries": "injuries/injuries_*.parquet",
     "players": "players/players.parquet",

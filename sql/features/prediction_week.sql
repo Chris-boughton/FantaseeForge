@@ -6,9 +6,12 @@ WITH regular_season_weeks AS (
     SELECT
         season,
         week,
+
         MIN(TRY_CAST(gameday AS DATE)) AS first_game_date,
         MAX(TRY_CAST(gameday AS DATE)) AS last_game_date,
+
         COUNT(*) AS scheduled_games,
+
         COUNT(*) FILTER (
             WHERE home_score IS NOT NULL
               AND away_score IS NOT NULL
@@ -34,9 +37,16 @@ eligible_weeks AS (
 
     FROM regular_season_weeks
 
-    WHERE first_game_date > CURRENT_DATE
-      AND completed_games = 0
-      AND scheduled_games > 0
+    WHERE scheduled_games > 0
+
+      -- Ignore weeks that have completely finished.
+      AND completed_games < scheduled_games
+
+      -- Exclude historical weeks whose results are missing.
+      AND last_game_date >= CAST(
+        timezone('America/New_York', current_timestamp)
+        AS DATE
+      )
 
 )
 
